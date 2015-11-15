@@ -8,8 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
+    // MARK: View Set up
+    override func loadView() {
+        super.loadView()
+        setView()
+        
+    }
+    
+    func setView(){
+        // hide or show nav bar
+        self.navigationController?.navigationBar.hidden = true 
+        
+        // back ground color
+        self.view.backgroundColor = UIColor.appBlueColor
+        // other set up
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
