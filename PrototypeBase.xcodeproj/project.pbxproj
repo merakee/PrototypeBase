@@ -20,6 +20,9 @@
 		1100D88E1BF854D600189D46 /* UIColor+AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D88D1BF854D600189D46 /* UIColor+AppColor.swift */; };
 		1100D88F1BF854D600189D46 /* UIColor+AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D88D1BF854D600189D46 /* UIColor+AppColor.swift */; };
 		1100D8901BF854D600189D46 /* UIColor+AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D88D1BF854D600189D46 /* UIColor+AppColor.swift */; };
+		1100D8921BF8919400189D46 /* AppUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D8911BF8919400189D46 /* AppUIManager.swift */; };
+		1100D8931BF8919400189D46 /* AppUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D8911BF8919400189D46 /* AppUIManager.swift */; };
+		1100D8941BF8919400189D46 /* AppUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D8911BF8919400189D46 /* AppUIManager.swift */; };
 		C73093E32E6D4D6FC996B6C9 /* Pods_PrototypeBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C644B850979E94B34EAAA5C6 /* Pods_PrototypeBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,7 @@
 		1100D8791BF849F000189D46 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		1100D8861BF853FA00189D46 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1100D88D1BF854D600189D46 /* UIColor+AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColor.swift"; sourceTree = "<group>"; };
+		1100D8911BF8919400189D46 /* AppUIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUIManager.swift; sourceTree = "<group>"; };
 		84592943D0710470358FE4D4 /* Pods-PrototypeBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrototypeBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrototypeBase/Pods-PrototypeBase.release.xcconfig"; sourceTree = "<group>"; };
 		BDA0C0B5E1AA7E792C5ACA63 /* Pods-PrototypeBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrototypeBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrototypeBase/Pods-PrototypeBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C644B850979E94B34EAAA5C6 /* Pods_PrototypeBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrototypeBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +155,7 @@
 		1100D87C1BF84A8700189D46 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1100D88C1BF854B200189D46 /* Common */,
+				1100D88C1BF854B200189D46 /* AppUI */,
 				1100D88A1BF8549C00189D46 /* Views */,
 				1100D87F1BF84AD100189D46 /* Assets */,
 			);
@@ -198,12 +202,13 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
-		1100D88C1BF854B200189D46 /* Common */ = {
+		1100D88C1BF854B200189D46 /* AppUI */ = {
 			isa = PBXGroup;
 			children = (
+				1100D8911BF8919400189D46 /* AppUIManager.swift */,
 				1100D88D1BF854D600189D46 /* UIColor+AppColor.swift */,
 			);
-			name = Common;
+			name = AppUI;
 			sourceTree = "<group>";
 		};
 		63BAD4D6121D60217B01BE39 /* Frameworks */ = {
@@ -410,6 +415,7 @@
 				1100D88E1BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
 				1100D84B1BF848AB00189D46 /* MainViewController.swift in Sources */,
 				1100D8491BF848AB00189D46 /* AppDelegate.swift in Sources */,
+				1100D8921BF8919400189D46 /* AppUIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1100D8611BF848AB00189D46 /* PrototypeBaseTests.swift in Sources */,
+				1100D8931BF8919400189D46 /* AppUIManager.swift in Sources */,
 				1100D88F1BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1100D86C1BF848AB00189D46 /* PrototypeBaseUITests.swift in Sources */,
+				1100D8941BF8919400189D46 /* AppUIManager.swift in Sources */,
 				1100D8901BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

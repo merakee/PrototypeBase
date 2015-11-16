@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import PureLayout
 
 class MainViewController: UIViewController {
 
-    // MARK: View Set up
+    // MARK: - View Set up
     override func loadView() {
         super.loadView()
         setView()
@@ -24,6 +25,12 @@ class MainViewController: UIViewController {
         // back ground color
         self.view.backgroundColor = UIColor.appBlueColor
         // other set up
+        let button = AppUIManager.sharedManager.getButtonWithTitle("Button", buttonColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+        self.view.addSubview(button)
+        button.autoSetDimension(.Height, toSize: 60.0)
+        button.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0,30.0,60.0,30.0), excludingEdge: .Top)
+        button.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
+        
     }
     
     override func viewDidLoad() {
@@ -37,5 +44,11 @@ class MainViewController: UIViewController {
     }
 
 
+    
+    
+    // MARK: - Button Actions
+    func buttonPressed(sender: UIButton!){
+        print("Button Pressed....")
+    }
 }
 
