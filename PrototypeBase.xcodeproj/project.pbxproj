@@ -23,6 +23,31 @@
 		1100D8921BF8919400189D46 /* AppUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D8911BF8919400189D46 /* AppUIManager.swift */; };
 		1100D8931BF8919400189D46 /* AppUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D8911BF8919400189D46 /* AppUIManager.swift */; };
 		1100D8941BF8919400189D46 /* AppUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D8911BF8919400189D46 /* AppUIManager.swift */; };
+		110BE5A41BFA8F2F00B9A61D /* Sertig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11B23FA81BFA6FEA00A26C5E /* Sertig.otf */; };
+		110BE5A51BFA8F3100B9A61D /* Sertig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11B23FA81BFA6FEA00A26C5E /* Sertig.otf */; };
+		110BE5A61BFA8F3200B9A61D /* Sertig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11B23FA81BFA6FEA00A26C5E /* Sertig.otf */; };
+		110BE5A81BFA8FC700B9A61D /* AppUIAppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110BE5A71BFA8FC700B9A61D /* AppUIAppearanceManager.swift */; };
+		110BE5AB1BFB9F0500B9A61D /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110BE5AA1BFB9F0500B9A61D /* CommonUtils.swift */; };
+		110BE5AC1BFB9F0500B9A61D /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110BE5AA1BFB9F0500B9A61D /* CommonUtils.swift */; };
+		110BE5AD1BFB9F0500B9A61D /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110BE5AA1BFB9F0500B9A61D /* CommonUtils.swift */; };
+		110BE5AF1BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110BE5AE1BFB9FEC00B9A61D /* AppAudioManager.swift */; };
+		110BE5B01BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110BE5AE1BFB9FEC00B9A61D /* AppAudioManager.swift */; };
+		110BE5B11BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110BE5AE1BFB9FEC00B9A61D /* AppAudioManager.swift */; };
+		110BE5B41BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 110BE5B31BFBA63300B9A61D /* railroad_crossing_bell.wav */; };
+		110BE5B51BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 110BE5B31BFBA63300B9A61D /* railroad_crossing_bell.wav */; };
+		110BE5B61BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 110BE5B31BFBA63300B9A61D /* railroad_crossing_bell.wav */; };
+		110BE5B81BFBAEE100B9A61D /* pay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 110BE5B71BFBAEE100B9A61D /* pay.mp3 */; };
+		110BE5B91BFBAEE100B9A61D /* pay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 110BE5B71BFBAEE100B9A61D /* pay.mp3 */; };
+		110BE5BA1BFBAEE100B9A61D /* pay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 110BE5B71BFBAEE100B9A61D /* pay.mp3 */; };
+		1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7161C03A50500862980 /* Launch Screen.storyboard */; };
+		1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
+		1175A71D1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
+		1175A71E1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
+		1175A71F1C03AB3600862980 /* electronic_brain-gray-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71B1C03AB3600862980 /* electronic_brain-gray-256.png */; };
+		1175A7201C03AB3600862980 /* electronic_brain-gray-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71B1C03AB3600862980 /* electronic_brain-gray-256.png */; };
+		1175A7211C03AB3600862980 /* electronic_brain-gray-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71B1C03AB3600862980 /* electronic_brain-gray-256.png */; };
+		1175A7241C03C2CC00862980 /* electronic_brain-gray-red-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7221C03C2CC00862980 /* electronic_brain-gray-red-256.png */; };
+		1175A7251C03C2CC00862980 /* electronic_brain-red-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7231C03C2CC00862980 /* electronic_brain-red-256.png */; };
 		C73093E32E6D4D6FC996B6C9 /* Pods_PrototypeBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C644B850979E94B34EAAA5C6 /* Pods_PrototypeBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,10 +81,21 @@
 		1100D8671BF848AB00189D46 /* PrototypeBaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototypeBaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1100D86B1BF848AB00189D46 /* PrototypeBaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeBaseUITests.swift; sourceTree = "<group>"; };
 		1100D86D1BF848AB00189D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1100D8791BF849F000189D46 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		1100D8791BF849F000189D46 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1100D8861BF853FA00189D46 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1100D88D1BF854D600189D46 /* UIColor+AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColor.swift"; sourceTree = "<group>"; };
 		1100D8911BF8919400189D46 /* AppUIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUIManager.swift; sourceTree = "<group>"; };
+		110BE5A71BFA8FC700B9A61D /* AppUIAppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUIAppearanceManager.swift; sourceTree = "<group>"; };
+		110BE5AA1BFB9F0500B9A61D /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		110BE5AE1BFB9FEC00B9A61D /* AppAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAudioManager.swift; sourceTree = "<group>"; };
+		110BE5B31BFBA63300B9A61D /* railroad_crossing_bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = railroad_crossing_bell.wav; sourceTree = "<group>"; };
+		110BE5B71BFBAEE100B9A61D /* pay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pay.mp3; sourceTree = "<group>"; };
+		1175A7161C03A50500862980 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1175A71A1C03AB3600862980 /* electronic_brain-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-256.png"; sourceTree = "<group>"; };
+		1175A71B1C03AB3600862980 /* electronic_brain-gray-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-gray-256.png"; sourceTree = "<group>"; };
+		1175A7221C03C2CC00862980 /* electronic_brain-gray-red-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-gray-red-256.png"; sourceTree = "<group>"; };
+		1175A7231C03C2CC00862980 /* electronic_brain-red-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-red-256.png"; sourceTree = "<group>"; };
+		11B23FA81BFA6FEA00A26C5E /* Sertig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sertig.otf; sourceTree = "<group>"; };
 		84592943D0710470358FE4D4 /* Pods-PrototypeBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrototypeBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrototypeBase/Pods-PrototypeBase.release.xcconfig"; sourceTree = "<group>"; };
 		BDA0C0B5E1AA7E792C5ACA63 /* Pods-PrototypeBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrototypeBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrototypeBase/Pods-PrototypeBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C644B850979E94B34EAAA5C6 /* Pods_PrototypeBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrototypeBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +152,7 @@
 		1100D8471BF848AB00189D46 /* PrototypeBase */ = {
 			isa = PBXGroup;
 			children = (
+				110BE5A91BFB9EDC00B9A61D /* Utilities */,
 				1100D87E1BF84A9500189D46 /* Models */,
 				1100D87D1BF84A9000189D46 /* Controllers */,
 				1100D87C1BF84A8700189D46 /* UI */,
@@ -181,8 +218,9 @@
 		1100D87F1BF84AD100189D46 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				1100D8861BF853FA00189D46 /* Default-568h@2x.png */,
-				1100D8521BF848AB00189D46 /* Assets.xcassets */,
+				1175A7151C03A48F00862980 /* Graphics */,
+				110BE5B21BFBA62700B9A61D /* Audio */,
+				11B23FA71BFA6F7300A26C5E /* Fonts */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -207,8 +245,49 @@
 			children = (
 				1100D8911BF8919400189D46 /* AppUIManager.swift */,
 				1100D88D1BF854D600189D46 /* UIColor+AppColor.swift */,
+				110BE5A71BFA8FC700B9A61D /* AppUIAppearanceManager.swift */,
 			);
 			name = AppUI;
+			sourceTree = "<group>";
+		};
+		110BE5A91BFB9EDC00B9A61D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				110BE5AA1BFB9F0500B9A61D /* CommonUtils.swift */,
+				110BE5AE1BFB9FEC00B9A61D /* AppAudioManager.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		110BE5B21BFBA62700B9A61D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				110BE5B71BFBAEE100B9A61D /* pay.mp3 */,
+				110BE5B31BFBA63300B9A61D /* railroad_crossing_bell.wav */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		1175A7151C03A48F00862980 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				1175A7221C03C2CC00862980 /* electronic_brain-gray-red-256.png */,
+				1175A7231C03C2CC00862980 /* electronic_brain-red-256.png */,
+				1175A71A1C03AB3600862980 /* electronic_brain-256.png */,
+				1175A71B1C03AB3600862980 /* electronic_brain-gray-256.png */,
+				1100D8521BF848AB00189D46 /* Assets.xcassets */,
+				1100D8861BF853FA00189D46 /* Default-568h@2x.png */,
+				1175A7161C03A50500862980 /* Launch Screen.storyboard */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		11B23FA71BFA6F7300A26C5E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				11B23FA81BFA6FEA00A26C5E /* Sertig.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		63BAD4D6121D60217B01BE39 /* Frameworks */ = {
@@ -334,9 +413,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */,
 				1100D8531BF848AB00189D46 /* Assets.xcassets in Resources */,
+				1175A71F1C03AB3600862980 /* electronic_brain-gray-256.png in Resources */,
+				1175A7241C03C2CC00862980 /* electronic_brain-gray-red-256.png in Resources */,
+				110BE5B41BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */,
 				1100D87A1BF849F000189D46 /* Podfile in Resources */,
+				110BE5B81BFBAEE100B9A61D /* pay.mp3 in Resources */,
+				1175A7251C03C2CC00862980 /* electronic_brain-red-256.png in Resources */,
 				1100D8871BF853FA00189D46 /* Default-568h@2x.png in Resources */,
+				110BE5A41BFA8F2F00B9A61D /* Sertig.otf in Resources */,
+				1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +431,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1175A71D1C03AB3600862980 /* electronic_brain-256.png in Resources */,
+				110BE5B51BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */,
 				1100D8881BF853FA00189D46 /* Default-568h@2x.png in Resources */,
+				110BE5A51BFA8F3100B9A61D /* Sertig.otf in Resources */,
+				1175A7201C03AB3600862980 /* electronic_brain-gray-256.png in Resources */,
+				110BE5B91BFBAEE100B9A61D /* pay.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +444,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1175A71E1C03AB3600862980 /* electronic_brain-256.png in Resources */,
+				110BE5B61BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */,
 				1100D8891BF853FA00189D46 /* Default-568h@2x.png in Resources */,
+				110BE5A61BFA8F3200B9A61D /* Sertig.otf in Resources */,
+				1175A7211C03AB3600862980 /* electronic_brain-gray-256.png in Resources */,
+				110BE5BA1BFBAEE100B9A61D /* pay.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,9 +510,12 @@
 			files = (
 				1100D8511BF848AB00189D46 /* PrototypeBase.xcdatamodeld in Sources */,
 				1100D88E1BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
+				110BE5AF1BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
 				1100D84B1BF848AB00189D46 /* MainViewController.swift in Sources */,
 				1100D8491BF848AB00189D46 /* AppDelegate.swift in Sources */,
 				1100D8921BF8919400189D46 /* AppUIManager.swift in Sources */,
+				110BE5AB1BFB9F0500B9A61D /* CommonUtils.swift in Sources */,
+				110BE5A81BFA8FC700B9A61D /* AppUIAppearanceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +525,8 @@
 			files = (
 				1100D8611BF848AB00189D46 /* PrototypeBaseTests.swift in Sources */,
 				1100D8931BF8919400189D46 /* AppUIManager.swift in Sources */,
+				110BE5AC1BFB9F0500B9A61D /* CommonUtils.swift in Sources */,
+				110BE5B01BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
 				1100D88F1BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +537,8 @@
 			files = (
 				1100D86C1BF848AB00189D46 /* PrototypeBaseUITests.swift in Sources */,
 				1100D8941BF8919400189D46 /* AppUIManager.swift in Sources */,
+				110BE5AD1BFB9F0500B9A61D /* CommonUtils.swift in Sources */,
+				110BE5B11BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
 				1100D8901BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +645,7 @@
 			baseConfigurationReference = BDA0C0B5E1AA7E792C5ACA63 /* Pods-PrototypeBase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				INFOPLIST_FILE = PrototypeBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.merakee.PrototypeBase;
@@ -553,6 +658,7 @@
 			baseConfigurationReference = 84592943D0710470358FE4D4 /* Pods-PrototypeBase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEPLOYMENT_POSTPROCESSING = YES;
 				INFOPLIST_FILE = PrototypeBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.merakee.PrototypeBase;

@@ -17,6 +17,24 @@ class AppUIManager{
     }
     
     
+    // MARK: - Overall App Style
+    // font
+    func appFontFamily() -> String {
+        return "Sertig" // "Helvetica Neue"
+    }
+    func appFont(size:CGFloat) -> UIFont {
+        return UIFont(name: self.appFontFamily(), size: size)!
+    }
+    
+    func getSupportedOrentation() -> UIInterfaceOrientationMask {
+        return [UIInterfaceOrientationMask.Portrait, UIInterfaceOrientationMask.PortraitUpsideDown]
+    }
+    
+    func getStatusBarStyle() -> UIStatusBarStyle{
+        return UIStatusBarStyle.LightContent;
+    }
+    
+    
     // MARK: - Layout methods
     func horizontallyCenterElement(view:UIView, inView:UIView){
         // Center
@@ -39,17 +57,10 @@ class AppUIManager{
             constant:0.0))
     }
     
-    //+(NSUInteger) getSupportedOrentation{
-    //    return UIInterfaceOrientationMaskPortrait |  UIInterfaceOrientationMaskPortraitUpsideDown;
-    //}
-    //
-    //#pragma mark - Appwide settings
-    //+(UIStatusBarStyle)getStatusBarStyle{
-    //    return UIStatusBarStyleLightContent;
-    //}
     
     
-    //#pragma mark - view elements methods:  UIview
+    
+    //MARK: - view elements methods:  UIview
     //+ (void)setUIView:(UIView *)view{
     //    [AppUIManager setUIView:view ofType:kAUCPriorityTypePrimary];
     //    }
@@ -63,36 +74,14 @@ class AppUIManager{
     //        //[AppUIManager addColorGradient:view];
     //        }
     //
-    //        + (void)addColorGradient:(NSArray *)colors toView:(UIView *)view{
-    //            CAGradientLayer *gradient = [CAGradientLayer layer];
-    //            gradient.frame = view.bounds;
-    //            gradient.colors = colors;
-    //
-    //            //@[(id)[[AppUIManager getColorOfType:kAUCColorTypeBackground withBrightness:kAUCColorScaleNormal andSaturation:kAUCColorScaleLightest] CGColor],
-    //            // (id)[[AppUIManager getColorOfType:kAUCColorTypePrimary withBrightness:kAUCColorScaleLightest
-    //            //                   andSaturation:kAUCColorScaleDarkest] CGColor],
-    //            //                   (id)[[AppUIManager getColorOfType:kAUCColorTypeBackground withBrightness:kAUCColorScaleLight
-    //            //                                       andSaturation:kAUCColorScaleDark] CGColor],
-    //            // (id)[[AppUIManager getColorOfType:kAUCColorTypeBackground withBrightness:kAUCColorScaleNormal andSaturation:kAUCColorScaleLightest] CGColor]];
-    //            //[view.layer insertSublayer:gradient atIndex:1];
-    //            [view.layer addSublayer:gradient];
-    //}
-    //
-    //
-    ////+ (void)addColorGradient:(UIView *)view{
-    ////    CAGradientLayer *gradient = [CAGradientLayer layer];
-    ////    gradient.frame = view.bounds;
-    ////    gradient.colors = @[(id)[[AppUIManager getColorOfType:kAUCColorTypeBackground withBrightness:kAUCColorScaleNormal andSaturation:kAUCColorScaleLightest] CGColor],
-    ////                        // (id)[[AppUIManager getColorOfType:kAUCColorTypePrimary withBrightness:kAUCColorScaleLightest
-    ////                        //                   andSaturation:kAUCColorScaleDarkest] CGColor],
-    ////                        (id)[[AppUIManager getColorOfType:kAUCColorTypeBackground withBrightness:kAUCColorScaleLight
-    ////                                            andSaturation:kAUCColorScaleDark] CGColor],
-    ////                        (id)[[AppUIManager getColorOfType:kAUCColorTypeBackground withBrightness:kAUCColorScaleNormal andSaturation:kAUCColorScaleLightest] CGColor]];
-    ////    //[view.layer insertSublayer:gradient atIndex:1];
-    ////    [view.layer addSublayer:gradient];
-    ////}
-    //
-    //#pragma mark - view elements methods:  UIImageView
+    func addColorGradientToView(view:UIView, colors:[CGColor]){
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = colors;
+        view.layer.addSublayer(gradient)
+    }
+    
+    //MARK: - view elements methods:  UIImageView
     //+ (void)setImageView:(UIImageView *)iv{
     //    //iv.backgroundColor  =[AppUIManager getColorOfType:kAUCColorTypeGray withBrightness:kAUCColorScaleDark];
     //
@@ -103,14 +92,33 @@ class AppUIManager{
     //}
     //
     //
-    //#pragma mark - view elements methods:  UIButton
+    
+    //MARK: - view elements methods:  UIButton
     
     func getButtonWithTitle(title: String, buttonColor: UIColor, textColor: UIColor) -> UIButton {
-        let button = UIButton.newAutoLayoutView()
+        let button = UIButton(type: .Custom)
+        button.translatesAutoresizingMaskIntoConstraints =  false
         button.setTitle(title, forState: .Normal)
         button.setTitleColor(textColor, forState: .Normal)
+        button.setTitleColor(textColor.mixWithColor(buttonColor, withFactor: 0.75), forState:.Highlighted)
         button.backgroundColor = buttonColor;
-        // button.setTitleColor(.grayColor(), forState: .Highlighted)
+        //button.showsTouchWhenHighlighted = true
+        //button.reversesTitleShadowWhenHighlighted = true
+        // button.titleLabel?.font = AppUIManager.sharedManager.appFont(20.0)
+        return button
+    }
+
+    func getCircularButtonWithTitle(title: String, buttonColor: UIColor, textColor: UIColor) -> UIButton {
+        let button = CircularButton(type: .Custom)
+        button.buttonColor = buttonColor
+        button.translatesAutoresizingMaskIntoConstraints =  false
+        button.setTitle(title, forState: .Normal)
+        button.setTitleColor(textColor, forState: .Normal)
+        button.setTitleColor(textColor.mixWithColor(buttonColor, withFactor: 0.75), forState:.Highlighted)
+        button.backgroundColor = UIColor.clearColor()
+        //button.showsTouchWhenHighlighted = true
+        //button.reversesTitleShadowWhenHighlighted = true
+        // button.titleLabel?.font = AppUIManager.sharedManager.appFont(20.0)
         return button
     }
     
@@ -249,13 +257,13 @@ class AppUIManager{
     //                                }
     //}
     
-    //#pragma mark - view elements methods:  UISegmentedControl
+    //MARK: - view elements methods:  UISegmentedControl
     //+ (void)setUISegmentedControl:(UISegmentedControl *)sControl{
     //
     //    // for auto layout
     //    [sControl setTranslatesAutoresizingMaskIntoConstraints:NO];
     //}
-    //#pragma mark - view elements methods:  UITextView
+    //MARK: - view elements methods:  UITextView
     //+ (void)setTextView:(UITextView *)textView{
     //    [AppUIManager setTextView:textView ofType:kAUCPriorityTypePrimary];
     //    }
@@ -327,7 +335,7 @@ class AppUIManager{
     //            textView.frame = nFrame;
     //}
     //
-    //#pragma mark - view elements methods: UITextFeild
+    //MARK: - view elements methods: UITextFeild
     //+ (void)setTextField:(UITextField *)textField placeholder:(NSString *)phtext{
     //    // cutom settings
     //    // set textField properties
@@ -389,7 +397,7 @@ class AppUIManager{
     //
     //}
     //
-    //#pragma mark - view elements methods:  UILabel
+    //MARK: - view elements methods:  UILabel
     ////+ (void)setUILabel:(UILabel *)label{
     ////    [AppUIManager setUILabel:label ofType:kAUCPriorityTypePrimary];
     ////}
@@ -460,7 +468,7 @@ class AppUIManager{
     ////    // for auto layout
     ////    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     ////}
-    //#pragma mark - view elements methods:  Navbar
+    //MARK: - view elements methods:  Navbar
     //+ (void)setNavbar:(UINavigationBar *)navbar{
     //    //backIndicatorImage  property
     //    //backIndicatorTransitionMaskImage  property
@@ -482,7 +490,7 @@ class AppUIManager{
     //}
     //
     //
-    //#pragma mark - view elements methods:  Tabbar
+    //MARK: - view elements methods:  Tabbar
     //+ (void)setTabbar:(UITabBar *)tabbar{
     //    // set properties
     //    //tabbar.barStyle  =  UIBarStyleDefault;
@@ -502,13 +510,13 @@ class AppUIManager{
     //
     //
     //
-    //#pragma mark - view elements methods:  Toolbar
+    //MARK: - view elements methods:  Toolbar
     //+ (void)setToolbar:(UIToolbar *)toolbar{
     //
     //}
     //
     //
-    //#pragma mark - view elements methods:  Table view
+    //MARK: - view elements methods:  Table view
     //+ (void)setTableView:(UITableView *)tableView{
     //    [AppUIManager setTableView:tableView ofType:kAUCPriorityTypePrimary];
     //    }
@@ -529,7 +537,7 @@ class AppUIManager{
     //
     //}
     //
-    //#pragma mark - view elements methods:  Activity Indicator
+    //MARK: - view elements methods:  Activity Indicator
     //+ (void)addActivityIndicator:(UIActivityIndicatorView *)activityIndicator toView:(UIView *)view{
     //    [activityIndicator setTranslatesAutoresizingMaskIntoConstraints:NO];
     //    activityIndicator.hidesWhenStopped=YES;
@@ -560,7 +568,7 @@ class AppUIManager{
     //}
     //
     //
-    //#pragma mark - Utility methods
+    //MARK: - Utility methods
     //+ (void)setRoundedCorner:(id)view{
     //    // rounded corner
     //    ((UIView *)view).layer.cornerRadius = kAUCRectCornerRadius;
@@ -635,7 +643,7 @@ class AppUIManager{
     //}
     //
     //
-    //#pragma mark - view elements methods:  App logo
+    //MARK: - view elements methods:  App logo
     //+ (UIImageView *)getAppLogoView{
     //    UIImageView *iv =[[UIImageView alloc] initWithImage:[UIImage imageNamed:kAUCAppLogoImage]];
     //    // defautl setting
@@ -673,7 +681,7 @@ class AppUIManager{
     //            constant:0.0]];
     //}
     //
-    //#pragma mark - Timing methods
+    //MARK: - Timing methods
     //+(void)dispatchBlock:(void (^)())action afterDelay:(double)delayInSeconds {
     //    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     //    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -682,6 +690,40 @@ class AppUIManager{
     //        }
     //        });
     //}
-    
 }
 
+class CircularButton : UIButton {
+    var buttonColor = UIColor.whiteColor()
+    
+    override init (frame : CGRect) {
+        super.init(frame : frame)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        //super.init(coder: aDecoder)!
+        fatalError("This class does not support NSCoding")
+    }
+    
+    convenience init(color: UIColor){
+        self.init(frame:CGRect.zero)
+        self.buttonColor =  color
+    }
+    
+    override func drawRect(rect: CGRect) {
+        // Get the Graphics Context
+        let context = UIGraphicsGetCurrentContext();
+        
+        // Set the circle outerline-width
+        // CGContextSetLineWidth(context, 5.0);
+        
+        // Set the circle outerline-colour
+        self.buttonColor.set()
+        
+        // Create Circle
+        CGContextAddArc(context, (frame.size.width)/2, frame.size.height/2, (min(frame.size.width,frame.size.height))/2, 0.0, CGFloat(M_PI * 2.0), 1)
+        
+        // Draw
+        CGContextFillPath(context);
+    }
+    
+}
