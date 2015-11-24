@@ -139,53 +139,52 @@ class SpeechViewController: UIViewController , OEEventsObserverDelegate {
         dicPath = lmGenerator.pathToSuccessfullyGeneratedDictionaryWithRequestedName(name)
     }
     
-    
     func pocketsphinxDidStartListening() {
-        print("Pocketsphinx is now listening.")
+        //print("Pocketsphinx is now listening.")
         statusTextView.text = "Pocketsphinx is now listening."
     }
     
     func pocketsphinxDidDetectSpeech() {
-        print("Pocketsphinx has detected speech.")
+        //print("Pocketsphinx has detected speech.")
         statusTextView.text = "Pocketsphinx has detected speech."
     }
     
     func pocketsphinxDidDetectFinishedSpeech() {
-        print("Pocketsphinx has detected a period of silence, concluding an utterance.")
+        //print("Pocketsphinx has detected a period of silence, concluding an utterance.")
         statusTextView.text = "Pocketsphinx has detected a period of silence, concluding an utterance."
     }
     
     func pocketsphinxDidStopListening() {
-        print("Pocketsphinx has stopped listening.")
+        //print("Pocketsphinx has stopped listening.")
         statusTextView.text = "Pocketsphinx has stopped listening."
     }
     
     func pocketsphinxDidSuspendRecognition() {
-        print("Pocketsphinx has suspended recognition.")
+        //print("Pocketsphinx has suspended recognition.")
         statusTextView.text = "Pocketsphinx has suspended recognition."
     }
     
     func pocketsphinxDidResumeRecognition() {
-        print("Pocketsphinx has resumed recognition.")
+        //print("Pocketsphinx has resumed recognition.")
         statusTextView.text = "Pocketsphinx has resumed recognition."
     }
     
     func pocketsphinxDidChangeLanguageModelToFile(newLanguageModelPathAsString: String, newDictionaryPathAsString: String) {
-        print("Pocketsphinx is now using the following language model: \(newLanguageModelPathAsString) and the following dictionary: \(newDictionaryPathAsString)")
+        //print("Pocketsphinx is now using the following language model: \(newLanguageModelPathAsString) and the following dictionary: \(newDictionaryPathAsString)")
     }
     
     func pocketSphinxContinuousSetupDidFailWithReason(reasonForFailure: String) {
-        print("Listening setup wasn't successful and returned the failure reason: \(reasonForFailure)")
+        //print("Listening setup wasn't successful and returned the failure reason: \(reasonForFailure)")
         statusTextView.text = "Listening setup wasn't successful and returned the failure reason: \(reasonForFailure)"
     }
     
     func pocketSphinxContinuousTeardownDidFailWithReason(reasonForFailure: String) {
-        print("Listening teardown wasn't successful and returned the failure reason: \(reasonForFailure)")
+        //print("Listening teardown wasn't successful and returned the failure reason: \(reasonForFailure)")
         statusTextView.text = "Listening teardown wasn't successful and returned the failure reason: \(reasonForFailure)"
     }
     
     func testRecognitionCompleted() {
-        print("A test file that was submitted for recognition is now complete.")
+        //print("A test file that was submitted for recognition is now complete.")
         statusTextView.text = "A test file that was submitted for recognition is now complete."
     }
     
