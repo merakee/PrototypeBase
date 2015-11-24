@@ -39,6 +39,12 @@
 		110BE5B81BFBAEE100B9A61D /* pay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 110BE5B71BFBAEE100B9A61D /* pay.mp3 */; };
 		110BE5B91BFBAEE100B9A61D /* pay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 110BE5B71BFBAEE100B9A61D /* pay.mp3 */; };
 		110BE5BA1BFBAEE100B9A61D /* pay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 110BE5B71BFBAEE100B9A61D /* pay.mp3 */; };
+		112518861C03E8AB00E9ED8D /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112518851C03E8AB00E9ED8D /* SpeechViewController.swift */; };
+		112518871C03E8AB00E9ED8D /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112518851C03E8AB00E9ED8D /* SpeechViewController.swift */; };
+		112518881C03E8AB00E9ED8D /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112518851C03E8AB00E9ED8D /* SpeechViewController.swift */; };
+		112518921C03ECD600E9ED8D /* RedMicButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 112518911C03ECD600E9ED8D /* RedMicButton.png */; };
+		112518931C03ECD600E9ED8D /* RedMicButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 112518911C03ECD600E9ED8D /* RedMicButton.png */; };
+		112518941C03ECD600E9ED8D /* RedMicButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 112518911C03ECD600E9ED8D /* RedMicButton.png */; };
 		1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7161C03A50500862980 /* Launch Screen.storyboard */; };
 		1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
 		1175A71D1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
@@ -48,6 +54,20 @@
 		1175A7211C03AB3600862980 /* electronic_brain-gray-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71B1C03AB3600862980 /* electronic_brain-gray-256.png */; };
 		1175A7241C03C2CC00862980 /* electronic_brain-gray-red-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7221C03C2CC00862980 /* electronic_brain-gray-red-256.png */; };
 		1175A7251C03C2CC00862980 /* electronic_brain-red-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7231C03C2CC00862980 /* electronic_brain-red-256.png */; };
+		1175A72B1C03E4B700862980 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7271C03E4B700862980 /* AcousticModelEnglish.bundle */; };
+		1175A72C1C03E4B700862980 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7271C03E4B700862980 /* AcousticModelEnglish.bundle */; };
+		1175A72D1C03E4B700862980 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7271C03E4B700862980 /* AcousticModelEnglish.bundle */; };
+		1175A72E1C03E4B700862980 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7281C03E4B700862980 /* AcousticModelSpanish.bundle */; };
+		1175A72F1C03E4B700862980 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7281C03E4B700862980 /* AcousticModelSpanish.bundle */; };
+		1175A7301C03E4B700862980 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7281C03E4B700862980 /* AcousticModelSpanish.bundle */; };
+		1175A7311C03E4B700862980 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1175A7291C03E4B700862980 /* OpenEars.framework */; };
+		1175A7321C03E4B700862980 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1175A7291C03E4B700862980 /* OpenEars.framework */; };
+		1175A7331C03E4B700862980 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1175A7291C03E4B700862980 /* OpenEars.framework */; };
+		1175A7341C03E4B700862980 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1175A72A1C03E4B700862980 /* Slt.framework */; };
+		1175A7351C03E4B700862980 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1175A72A1C03E4B700862980 /* Slt.framework */; };
+		1175A7361C03E4B700862980 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1175A72A1C03E4B700862980 /* Slt.framework */; };
+		1175A7381C03E4EE00862980 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1175A7371C03E4EE00862980 /* AudioToolbox.framework */; };
+		1175A73A1C03E4FC00862980 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1175A7391C03E4FC00862980 /* AVFoundation.framework */; };
 		C73093E32E6D4D6FC996B6C9 /* Pods_PrototypeBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C644B850979E94B34EAAA5C6 /* Pods_PrototypeBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,11 +110,22 @@
 		110BE5AE1BFB9FEC00B9A61D /* AppAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAudioManager.swift; sourceTree = "<group>"; };
 		110BE5B31BFBA63300B9A61D /* railroad_crossing_bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = railroad_crossing_bell.wav; sourceTree = "<group>"; };
 		110BE5B71BFBAEE100B9A61D /* pay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pay.mp3; sourceTree = "<group>"; };
+		112518851C03E8AB00E9ED8D /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		112518891C03E91800E9ED8D /* PrototypeBase-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototypeBase-Bridging-Header.h"; sourceTree = "<group>"; };
+		1125188A1C03E91800E9ED8D /* PrototypeBaseTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototypeBaseTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		1125188B1C03E91800E9ED8D /* PrototypeBaseUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototypeBaseUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		112518911C03ECD600E9ED8D /* RedMicButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedMicButton.png; sourceTree = "<group>"; };
 		1175A7161C03A50500862980 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1175A71A1C03AB3600862980 /* electronic_brain-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-256.png"; sourceTree = "<group>"; };
 		1175A71B1C03AB3600862980 /* electronic_brain-gray-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-gray-256.png"; sourceTree = "<group>"; };
 		1175A7221C03C2CC00862980 /* electronic_brain-gray-red-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-gray-red-256.png"; sourceTree = "<group>"; };
 		1175A7231C03C2CC00862980 /* electronic_brain-red-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-red-256.png"; sourceTree = "<group>"; };
+		1175A7271C03E4B700862980 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		1175A7281C03E4B700862980 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		1175A7291C03E4B700862980 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		1175A72A1C03E4B700862980 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		1175A7371C03E4EE00862980 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1175A7391C03E4FC00862980 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		11B23FA81BFA6FEA00A26C5E /* Sertig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sertig.otf; sourceTree = "<group>"; };
 		84592943D0710470358FE4D4 /* Pods-PrototypeBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrototypeBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrototypeBase/Pods-PrototypeBase.release.xcconfig"; sourceTree = "<group>"; };
 		BDA0C0B5E1AA7E792C5ACA63 /* Pods-PrototypeBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrototypeBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrototypeBase/Pods-PrototypeBase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,7 +137,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1175A73A1C03E4FC00862980 /* AVFoundation.framework in Frameworks */,
+				1175A7381C03E4EE00862980 /* AudioToolbox.framework in Frameworks */,
+				1175A7341C03E4B700862980 /* Slt.framework in Frameworks */,
 				C73093E32E6D4D6FC996B6C9 /* Pods_PrototypeBase.framework in Frameworks */,
+				1175A7311C03E4B700862980 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1175A7351C03E4B700862980 /* Slt.framework in Frameworks */,
+				1175A7321C03E4B700862980 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +158,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1175A7361C03E4B700862980 /* Slt.framework in Frameworks */,
+				1175A7331C03E4B700862980 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +221,9 @@
 		1100D87B1BF84A6D00189D46 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				112518891C03E91800E9ED8D /* PrototypeBase-Bridging-Header.h */,
+				1125188A1C03E91800E9ED8D /* PrototypeBaseTests-Bridging-Header.h */,
+				1125188B1C03E91800E9ED8D /* PrototypeBaseUITests-Bridging-Header.h */,
 				1100D8791BF849F000189D46 /* Podfile */,
 				1100D8571BF848AB00189D46 /* Info.plist */,
 				1100D8481BF848AB00189D46 /* AppDelegate.swift */,
@@ -203,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				1100D84A1BF848AB00189D46 /* MainViewController.swift */,
+				112518851C03E8AB00E9ED8D /* SpeechViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -271,6 +314,7 @@
 		1175A7151C03A48F00862980 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				112518911C03ECD600E9ED8D /* RedMicButton.png */,
 				1175A7221C03C2CC00862980 /* electronic_brain-gray-red-256.png */,
 				1175A7231C03C2CC00862980 /* electronic_brain-red-256.png */,
 				1175A71A1C03AB3600862980 /* electronic_brain-256.png */,
@@ -280,6 +324,18 @@
 				1175A7161C03A50500862980 /* Launch Screen.storyboard */,
 			);
 			name = Graphics;
+			sourceTree = "<group>";
+		};
+		1175A7261C03E4B700862980 /* OpenEar Framework */ = {
+			isa = PBXGroup;
+			children = (
+				1175A7271C03E4B700862980 /* AcousticModelEnglish.bundle */,
+				1175A7281C03E4B700862980 /* AcousticModelSpanish.bundle */,
+				1175A7291C03E4B700862980 /* OpenEars.framework */,
+				1175A72A1C03E4B700862980 /* Slt.framework */,
+			);
+			name = "OpenEar Framework";
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		11B23FA71BFA6F7300A26C5E /* Fonts */ = {
@@ -293,6 +349,9 @@
 		63BAD4D6121D60217B01BE39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1175A7391C03E4FC00862980 /* AVFoundation.framework */,
+				1175A7371C03E4EE00862980 /* AudioToolbox.framework */,
+				1175A7261C03E4B700862980 /* OpenEar Framework */,
 				C644B850979E94B34EAAA5C6 /* Pods_PrototypeBase.framework */,
 			);
 			name = Frameworks;
@@ -414,14 +473,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */,
+				1175A72E1C03E4B700862980 /* AcousticModelSpanish.bundle in Resources */,
 				1100D8531BF848AB00189D46 /* Assets.xcassets in Resources */,
 				1175A71F1C03AB3600862980 /* electronic_brain-gray-256.png in Resources */,
 				1175A7241C03C2CC00862980 /* electronic_brain-gray-red-256.png in Resources */,
 				110BE5B41BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */,
 				1100D87A1BF849F000189D46 /* Podfile in Resources */,
+				112518921C03ECD600E9ED8D /* RedMicButton.png in Resources */,
 				110BE5B81BFBAEE100B9A61D /* pay.mp3 in Resources */,
 				1175A7251C03C2CC00862980 /* electronic_brain-red-256.png in Resources */,
 				1100D8871BF853FA00189D46 /* Default-568h@2x.png in Resources */,
+				1175A72B1C03E4B700862980 /* AcousticModelEnglish.bundle in Resources */,
 				110BE5A41BFA8F2F00B9A61D /* Sertig.otf in Resources */,
 				1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */,
 			);
@@ -434,9 +496,12 @@
 				1175A71D1C03AB3600862980 /* electronic_brain-256.png in Resources */,
 				110BE5B51BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */,
 				1100D8881BF853FA00189D46 /* Default-568h@2x.png in Resources */,
+				112518931C03ECD600E9ED8D /* RedMicButton.png in Resources */,
 				110BE5A51BFA8F3100B9A61D /* Sertig.otf in Resources */,
 				1175A7201C03AB3600862980 /* electronic_brain-gray-256.png in Resources */,
+				1175A72F1C03E4B700862980 /* AcousticModelSpanish.bundle in Resources */,
 				110BE5B91BFBAEE100B9A61D /* pay.mp3 in Resources */,
+				1175A72C1C03E4B700862980 /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,9 +512,12 @@
 				1175A71E1C03AB3600862980 /* electronic_brain-256.png in Resources */,
 				110BE5B61BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */,
 				1100D8891BF853FA00189D46 /* Default-568h@2x.png in Resources */,
+				112518941C03ECD600E9ED8D /* RedMicButton.png in Resources */,
 				110BE5A61BFA8F3200B9A61D /* Sertig.otf in Resources */,
 				1175A7211C03AB3600862980 /* electronic_brain-gray-256.png in Resources */,
+				1175A7301C03E4B700862980 /* AcousticModelSpanish.bundle in Resources */,
 				110BE5BA1BFBAEE100B9A61D /* pay.mp3 in Resources */,
+				1175A72D1C03E4B700862980 /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +580,7 @@
 				1100D88E1BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
 				110BE5AF1BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
 				1100D84B1BF848AB00189D46 /* MainViewController.swift in Sources */,
+				112518861C03E8AB00E9ED8D /* SpeechViewController.swift in Sources */,
 				1100D8491BF848AB00189D46 /* AppDelegate.swift in Sources */,
 				1100D8921BF8919400189D46 /* AppUIManager.swift in Sources */,
 				110BE5AB1BFB9F0500B9A61D /* CommonUtils.swift in Sources */,
@@ -527,6 +596,7 @@
 				1100D8931BF8919400189D46 /* AppUIManager.swift in Sources */,
 				110BE5AC1BFB9F0500B9A61D /* CommonUtils.swift in Sources */,
 				110BE5B01BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
+				112518871C03E8AB00E9ED8D /* SpeechViewController.swift in Sources */,
 				1100D88F1BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +609,7 @@
 				1100D8941BF8919400189D46 /* AppUIManager.swift in Sources */,
 				110BE5AD1BFB9F0500B9A61D /* CommonUtils.swift in Sources */,
 				110BE5B11BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
+				112518881C03E8AB00E9ED8D /* SpeechViewController.swift in Sources */,
 				1100D8901BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,11 +716,18 @@
 			baseConfigurationReference = BDA0C0B5E1AA7E792C5ACA63 /* Pods-PrototypeBase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = PrototypeBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.merakee.PrototypeBase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PrototypeBase/PrototypeBase-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -658,11 +736,17 @@
 			baseConfigurationReference = 84592943D0710470358FE4D4 /* Pods-PrototypeBase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = PrototypeBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.merakee.PrototypeBase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PrototypeBase/PrototypeBase-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -670,10 +754,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = PrototypeBaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.merakee.PrototypeBaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PrototypeBase/PrototypeBaseTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrototypeBase.app/PrototypeBase";
 			};
 			name = Debug;
@@ -682,10 +773,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = PrototypeBaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.merakee.PrototypeBaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PrototypeBase/PrototypeBaseTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrototypeBase.app/PrototypeBase";
 			};
 			name = Release;
@@ -693,10 +790,17 @@
 		1100D8771BF848AB00189D46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = PrototypeBaseUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.merakee.PrototypeBaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PrototypeBase/PrototypeBaseUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = PrototypeBase;
 				USES_XCTRUNNER = YES;
 			};
@@ -705,10 +809,16 @@
 		1100D8781BF848AB00189D46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = PrototypeBaseUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.merakee.PrototypeBaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PrototypeBase/PrototypeBaseUITests-Bridging-Header.h";
 				TEST_TARGET_NAME = PrototypeBase;
 				USES_XCTRUNNER = YES;
 			};

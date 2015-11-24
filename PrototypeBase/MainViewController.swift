@@ -26,10 +26,12 @@ class MainViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()//appBlueColor
         //AppUIManager.sharedManager.addColorGradientToView(self.view, colors: [UIColor.appBlueColor.CGColor,UIColor.appGrayColor.CGColor])
         // other set up
-        let button = AppUIManager.sharedManager.getCircularButtonWithTitle("Button", buttonColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+        //let button = AppUIManager.sharedManager.getCircularButtonWithTitle("Start Speech", buttonColor: UIColor.redColor(), textColor: UIColor.whiteColor())
+        let button = AppUIManager.sharedManager.getButtonWithTitle("Start Speech", buttonColor: UIColor.redColor(), textColor: UIColor.whiteColor())
         self.view.addSubview(button)
         button.autoSetDimension(.Height, toSize: 80.0)
-        button.autoMatchDimension(ALDimension.Height, toDimension: ALDimension.Width, ofView:button)
+        button.autoSetDimension(.Width, toSize: 300.0)
+        //button.autoMatchDimension(ALDimension.Height, toDimension: ALDimension.Width, ofView:button)
         //button.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0,30.0,60.0,30.0), excludingEdge: .Top)
         button.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
         button.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 60.0)
