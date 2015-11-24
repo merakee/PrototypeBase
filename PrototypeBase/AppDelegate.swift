@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let mainViewController = MainViewController()
+        let mainViewController = SpeechViewController()//MainViewController()
         let navController: UINavigationController = UINavigationController(rootViewController: mainViewController)
         
         self.window!.rootViewController = navController
