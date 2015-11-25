@@ -9,12 +9,18 @@
 import UIKit
 import PureLayout
 
-class SpeechViewController: UIViewController , BSRSpeechRecognizerDelegate {
+class SpeechViewController: UIViewController , BSRSpeechRecognizerDelegate, BSRServerDelegate {
     
     var recordButton: UIButton!
     var transcriptionTextView: UITextView!
     var statusTextView: UITextView!
-    
+    var speechRecognizer: BSRSpeechRecognizer!
+    var batchServer: ASRBatchAPI!
+    var soundData = NSMutableData()
+    var sampleRate = 0
+    var bitRate = 0
+    var channel = 0
+    var dataSent = false
     
     // MARK: - View Set up
     override func loadView() {
@@ -76,16 +82,63 @@ class SpeechViewController: UIViewController , BSRSpeechRecognizerDelegate {
     
     // MARK: - Speech Engine Mathods
     func setupSpeechEngine(){
-        let server = ServerManager.getServer(ServerManager.ServerType.EnglishAmazon)
-        let endPoint = server["enpPoint"]
-        print(server)
-        print(endPoint)
+        self.speechRecognizer = BSRSpeechRecognizer.sharedInstance()
+        self.speechRecognizer.delegate = self
         
-        //BSRSpeechRecognizer.sharedInstance().apiConfig.serverURL = ServerManager.getServer(ServerManager.ServerType.EnglishAmazon)["]
-        //BSRSpeechRecognizer.sharedInstance().apiConfig.streamingEndpoint =
+        let server = ServerManager.getServer(ServerManager.ServerType.EnglishAmazon) as? [String:AnyObject]
+        //let server = ServerManager.getServer(ServerManager.ServerType.ChineseAmazon) as? [String:AnyObject]
+        let endPoint = server!["endpoint"]
+        let endPointUrl = NSURL(string: endPoint as! String)
+        let serverURL = NSURL(string: endPointUrl!.scheme + "://" + endPointUrl!.host!)
+        let streamingEndpoint: String  = endPointUrl!.path!
+        
+        print(server)
+        print(serverURL)
+        print(streamingEndpoint)
+        
+        BSRSpeechRecognizer.sharedInstance().apiConfig.serverURL = serverURL
+        BSRSpeechRecognizer.sharedInstance().apiConfig.streamingEndpoint = streamingEndpoint
         BSRSpeechRecognizer.sharedInstance().delegate = self
     }
     
+    // MARK: - Batch server setting
+    func setBatchServer() {
+        if (self.batchServer == nil ) {
+            self.batchServer = ASRBatchAPI.sharedInstance()
+            self.batchServer.delegate = self
+        }
+    }
+    
+    func speechRecognizer(speechRecognizer: BSRSpeechRecognizer, didRecognizeAudioData audioData:NSData, audioInfo:BSRAudioSampleInfo) {
+        self.soundData.appendData(audioData)
+        
+        let type = self.speechRecognizer.apiConfig.serverType
+        let sampleRate = audioInfo.sampleRate
+        let bitRate = audioInfo.bitRate
+        let channel = audioInfo.channel
+        let evel = audioInfo.level
+        let last = audioInfo.isLastSample
+        
+        self.sampleRate = sampleRate.integerValue
+        self.bitRate = bitRate.integerValue
+        self.channel = channel.integerValue
+        
+        if (last && (type != .Stream) && !self.dataSent) {
+            self.sendDataToBatchServer()
+        }
+        
+        //self.delegate onLevelChanged:level.floatValue
+        
+        if (!last) {
+            self.dataSent = false
+        }
+    }
+    
+    func sendDataToBatchServer(){
+        //self.batchServer.sendData(self.getSoundfileWithHeader());
+    }
+    
+    // MARK: - Speech Engine Delegate methods
     func speechRecognizer(speechRecognizer:BSRSpeechRecognizer, didChangeState state:BSRState) {
         switch state {
         case .Ready:
@@ -108,6 +161,9 @@ class SpeechViewController: UIViewController , BSRSpeechRecognizerDelegate {
                 self.transcriptionTextView.text = transcription.transcription
             }
         }
+    }
+    
+    func server(server:BSRNetworkProtocol, didReceiveTranscription transcriptionResult:BSRTranscriptionResult, utteranceEnd ended:Bool, error:NSError){
     }
     
     // MARK: - Button Action methods
