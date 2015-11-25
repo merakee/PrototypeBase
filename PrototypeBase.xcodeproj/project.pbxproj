@@ -49,6 +49,9 @@
 		1125189F1C04DF9F00E9ED8D /* RedMicButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1125189D1C04DF9F00E9ED8D /* RedMicButton.png */; };
 		112518A01C04DF9F00E9ED8D /* RedMicButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1125189D1C04DF9F00E9ED8D /* RedMicButton.png */; };
 		116C352B1C050D4300DF2AB4 /* ASRBatchAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C352A1C050D4300DF2AB4 /* ASRBatchAPI.m */; };
+		116C352E1C06363400DF2AB4 /* AudioWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C352D1C06363400DF2AB4 /* AudioWaveView.swift */; };
+		116C352F1C06363400DF2AB4 /* AudioWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C352D1C06363400DF2AB4 /* AudioWaveView.swift */; };
+		116C35301C06363400DF2AB4 /* AudioWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C352D1C06363400DF2AB4 /* AudioWaveView.swift */; };
 		1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7161C03A50500862980 /* Launch Screen.storyboard */; };
 		1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
 		1175A71D1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
@@ -109,6 +112,7 @@
 		112518A31C04E06100E9ED8D /* PrototypeBaseUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototypeBaseUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		116C35291C050D4300DF2AB4 /* ASRBatchAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRBatchAPI.h; sourceTree = "<group>"; };
 		116C352A1C050D4300DF2AB4 /* ASRBatchAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRBatchAPI.m; sourceTree = "<group>"; };
+		116C352D1C06363400DF2AB4 /* AudioWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioWaveView.swift; sourceTree = "<group>"; };
 		1175A7161C03A50500862980 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1175A71A1C03AB3600862980 /* electronic_brain-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-256.png"; sourceTree = "<group>"; };
 		1175A71B1C03AB3600862980 /* electronic_brain-gray-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronic_brain-gray-256.png"; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				1100D88B1BF854A200189D46 /* Main */,
+				116C352D1C06363400DF2AB4 /* AudioWaveView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -555,6 +560,7 @@
 			files = (
 				1100D8511BF848AB00189D46 /* PrototypeBase.xcdatamodeld in Sources */,
 				1100D88E1BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
+				116C352E1C06363400DF2AB4 /* AudioWaveView.swift in Sources */,
 				110BE5AF1BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
 				1100D84B1BF848AB00189D46 /* MainViewController.swift in Sources */,
 				1125189A1C04DF6A00E9ED8D /* SpeechViewController.swift in Sources */,
@@ -573,6 +579,7 @@
 			files = (
 				1100D8611BF848AB00189D46 /* PrototypeBaseTests.swift in Sources */,
 				1100D8931BF8919400189D46 /* AppUIManager.swift in Sources */,
+				116C352F1C06363400DF2AB4 /* AudioWaveView.swift in Sources */,
 				110BE5AC1BFB9F0500B9A61D /* CommonUtils.swift in Sources */,
 				110BE5B01BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
 				1125189B1C04DF6A00E9ED8D /* SpeechViewController.swift in Sources */,
@@ -586,6 +593,7 @@
 			files = (
 				1100D86C1BF848AB00189D46 /* PrototypeBaseUITests.swift in Sources */,
 				1100D8941BF8919400189D46 /* AppUIManager.swift in Sources */,
+				116C35301C06363400DF2AB4 /* AudioWaveView.swift in Sources */,
 				110BE5AD1BFB9F0500B9A61D /* CommonUtils.swift in Sources */,
 				110BE5B11BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
 				1125189C1C04DF6A00E9ED8D /* SpeechViewController.swift in Sources */,
