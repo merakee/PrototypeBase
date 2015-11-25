@@ -4,5 +4,9 @@
 //
 
 #import <DeepSpeechBaseKit/DeepSpeechBaseKit.h>
+#import <DeepSpeechBaseKit/BSRVadClient.h>
 #import "BSRSpeechRecognizerSubclass.h"
 #import "ASRBatchAPI.h"
+#import "SoundFileHelper.h"
+#import "DemoServerHelper.h"
+#import "ASRServerConfig.h"

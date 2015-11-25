@@ -23,6 +23,14 @@
 		1100D8921BF8919400189D46 /* AppUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D8911BF8919400189D46 /* AppUIManager.swift */; };
 		1100D8931BF8919400189D46 /* AppUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D8911BF8919400189D46 /* AppUIManager.swift */; };
 		1100D8941BF8919400189D46 /* AppUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100D8911BF8919400189D46 /* AppUIManager.swift */; };
+		110BDBF61C06456200EBA131 /* SoundFileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 110BDBF51C06456200EBA131 /* SoundFileHelper.m */; };
+		110BDBF91C06473200EBA131 /* ASRServerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 110BDBF81C06473200EBA131 /* ASRServerConfig.m */; };
+		110BDBFC1C06475A00EBA131 /* DemoServerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 110BDBFB1C06475A00EBA131 /* DemoServerHelper.m */; };
+		110BDBFF1C06478600EBA131 /* ASRServerConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 110BDBFE1C06478600EBA131 /* ASRServerConfigManager.m */; };
+		110BDC021C06527500EBA131 /* NSUserDefaults+ASRSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 110BDC011C06527500EBA131 /* NSUserDefaults+ASRSupport.m */; };
+		110BDC051C06528F00EBA131 /* DemoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 110BDC041C06528F00EBA131 /* DemoHelper.m */; };
+		110BDC081C0652B500EBA131 /* InputSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 110BDC071C0652B500EBA131 /* InputSupport.m */; };
+		110BDC0B1C0652D200EBA131 /* ASRSoundSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 110BDC0A1C0652D200EBA131 /* ASRSoundSupport.m */; };
 		110BE5A41BFA8F2F00B9A61D /* Sertig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11B23FA81BFA6FEA00A26C5E /* Sertig.otf */; };
 		110BE5A51BFA8F3100B9A61D /* Sertig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11B23FA81BFA6FEA00A26C5E /* Sertig.otf */; };
 		110BE5A61BFA8F3200B9A61D /* Sertig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 11B23FA81BFA6FEA00A26C5E /* Sertig.otf */; };
@@ -96,6 +104,22 @@
 		1100D8861BF853FA00189D46 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1100D88D1BF854D600189D46 /* UIColor+AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColor.swift"; sourceTree = "<group>"; };
 		1100D8911BF8919400189D46 /* AppUIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUIManager.swift; sourceTree = "<group>"; };
+		110BDBF41C06456200EBA131 /* SoundFileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFileHelper.h; sourceTree = "<group>"; };
+		110BDBF51C06456200EBA131 /* SoundFileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundFileHelper.m; sourceTree = "<group>"; };
+		110BDBF71C06473200EBA131 /* ASRServerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRServerConfig.h; sourceTree = "<group>"; };
+		110BDBF81C06473200EBA131 /* ASRServerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRServerConfig.m; sourceTree = "<group>"; };
+		110BDBFA1C06475A00EBA131 /* DemoServerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoServerHelper.h; sourceTree = "<group>"; };
+		110BDBFB1C06475A00EBA131 /* DemoServerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoServerHelper.m; sourceTree = "<group>"; };
+		110BDBFD1C06478600EBA131 /* ASRServerConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRServerConfigManager.h; sourceTree = "<group>"; };
+		110BDBFE1C06478600EBA131 /* ASRServerConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRServerConfigManager.m; sourceTree = "<group>"; };
+		110BDC001C06527500EBA131 /* NSUserDefaults+ASRSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+ASRSupport.h"; sourceTree = "<group>"; };
+		110BDC011C06527500EBA131 /* NSUserDefaults+ASRSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+ASRSupport.m"; sourceTree = "<group>"; };
+		110BDC031C06528F00EBA131 /* DemoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoHelper.h; sourceTree = "<group>"; };
+		110BDC041C06528F00EBA131 /* DemoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoHelper.m; sourceTree = "<group>"; };
+		110BDC061C0652B500EBA131 /* InputSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSupport.h; sourceTree = "<group>"; };
+		110BDC071C0652B500EBA131 /* InputSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSupport.m; sourceTree = "<group>"; };
+		110BDC091C0652D200EBA131 /* ASRSoundSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRSoundSupport.h; sourceTree = "<group>"; };
+		110BDC0A1C0652D200EBA131 /* ASRSoundSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRSoundSupport.m; sourceTree = "<group>"; };
 		110BE5A71BFA8FC700B9A61D /* AppUIAppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUIAppearanceManager.swift; sourceTree = "<group>"; };
 		110BE5AA1BFB9F0500B9A61D /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		110BE5AE1BFB9FEC00B9A61D /* AppAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAudioManager.swift; sourceTree = "<group>"; };
@@ -300,6 +324,22 @@
 		116C352C1C050D4B00DF2AB4 /* SpeechEngine */ = {
 			isa = PBXGroup;
 			children = (
+				110BDC001C06527500EBA131 /* NSUserDefaults+ASRSupport.h */,
+				110BDC011C06527500EBA131 /* NSUserDefaults+ASRSupport.m */,
+				110BDC091C0652D200EBA131 /* ASRSoundSupport.h */,
+				110BDC0A1C0652D200EBA131 /* ASRSoundSupport.m */,
+				110BDC031C06528F00EBA131 /* DemoHelper.h */,
+				110BDC041C06528F00EBA131 /* DemoHelper.m */,
+				110BDC061C0652B500EBA131 /* InputSupport.h */,
+				110BDC071C0652B500EBA131 /* InputSupport.m */,
+				110BDBFA1C06475A00EBA131 /* DemoServerHelper.h */,
+				110BDBFD1C06478600EBA131 /* ASRServerConfigManager.h */,
+				110BDBFE1C06478600EBA131 /* ASRServerConfigManager.m */,
+				110BDBFB1C06475A00EBA131 /* DemoServerHelper.m */,
+				110BDBF71C06473200EBA131 /* ASRServerConfig.h */,
+				110BDBF81C06473200EBA131 /* ASRServerConfig.m */,
+				110BDBF41C06456200EBA131 /* SoundFileHelper.h */,
+				110BDBF51C06456200EBA131 /* SoundFileHelper.m */,
 				11998F9E1C04EE86009840E8 /* ServerManager.swift */,
 				11998F9D1C04EE19009840E8 /* BSRSpeechRecognizerSubclass.h */,
 				116C35291C050D4300DF2AB4 /* ASRBatchAPI.h */,
@@ -553,17 +593,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110BDC081C0652B500EBA131 /* InputSupport.m in Sources */,
 				1100D8511BF848AB00189D46 /* PrototypeBase.xcdatamodeld in Sources */,
 				1100D88E1BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
+				110BDC0B1C0652D200EBA131 /* ASRSoundSupport.m in Sources */,
 				110BE5AF1BFB9FEC00B9A61D /* AppAudioManager.swift in Sources */,
 				1100D84B1BF848AB00189D46 /* MainViewController.swift in Sources */,
 				1125189A1C04DF6A00E9ED8D /* SpeechViewController.swift in Sources */,
+				110BDBFC1C06475A00EBA131 /* DemoServerHelper.m in Sources */,
 				1100D8491BF848AB00189D46 /* AppDelegate.swift in Sources */,
+				110BDBFF1C06478600EBA131 /* ASRServerConfigManager.m in Sources */,
 				11998F9F1C04EE86009840E8 /* ServerManager.swift in Sources */,
 				1100D8921BF8919400189D46 /* AppUIManager.swift in Sources */,
 				110BE5AB1BFB9F0500B9A61D /* CommonUtils.swift in Sources */,
+				110BDBF61C06456200EBA131 /* SoundFileHelper.m in Sources */,
+				110BDC021C06527500EBA131 /* NSUserDefaults+ASRSupport.m in Sources */,
 				110BE5A81BFA8FC700B9A61D /* AppUIAppearanceManager.swift in Sources */,
 				116C352B1C050D4300DF2AB4 /* ASRBatchAPI.m in Sources */,
+				110BDBF91C06473200EBA131 /* ASRServerConfig.m in Sources */,
+				110BDC051C06528F00EBA131 /* DemoHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
