@@ -56,6 +56,15 @@
 		1125189E1C04DF9F00E9ED8D /* RedMicButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1125189D1C04DF9F00E9ED8D /* RedMicButton.png */; };
 		1125189F1C04DF9F00E9ED8D /* RedMicButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1125189D1C04DF9F00E9ED8D /* RedMicButton.png */; };
 		112518A01C04DF9F00E9ED8D /* RedMicButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1125189D1C04DF9F00E9ED8D /* RedMicButton.png */; };
+		113B5D6A1C1F6A7D00ED3D68 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B5D691C1F6A7D00ED3D68 /* SlideViewController.swift */; };
+		113B5D741C1F6D2900ED3D68 /* MapBuddy_Demo_view1.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5D6C1C1F6D2900ED3D68 /* MapBuddy_Demo_view1.png */; };
+		113B5D751C1F6D2900ED3D68 /* MapBuddy_Demo_view2.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5D6D1C1F6D2900ED3D68 /* MapBuddy_Demo_view2.png */; };
+		113B5D761C1F6D2900ED3D68 /* MapBuddy_Demo_view3.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5D6E1C1F6D2900ED3D68 /* MapBuddy_Demo_view3.png */; };
+		113B5D771C1F6D2900ED3D68 /* MapBuddy_Demo_view4.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5D6F1C1F6D2900ED3D68 /* MapBuddy_Demo_view4.png */; };
+		113B5D781C1F6D2900ED3D68 /* MapBuddy_Demo_view5.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5D701C1F6D2900ED3D68 /* MapBuddy_Demo_view5.png */; };
+		113B5D791C1F6D2900ED3D68 /* MapBuddy_Demo_view6.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5D711C1F6D2900ED3D68 /* MapBuddy_Demo_view6.png */; };
+		113B5D7A1C1F6D2900ED3D68 /* MapBuddy_Demo_view7.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5D721C1F6D2900ED3D68 /* MapBuddy_Demo_view7.png */; };
+		113B5D7B1C1F6D2900ED3D68 /* MapBuddy_Demo_view8.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5D731C1F6D2900ED3D68 /* MapBuddy_Demo_view8.png */; };
 		116C352B1C050D4300DF2AB4 /* ASRBatchAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C352A1C050D4300DF2AB4 /* ASRBatchAPI.m */; };
 		1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7161C03A50500862980 /* Launch Screen.storyboard */; };
 		1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
@@ -131,6 +140,15 @@
 		112518A11C04E06100E9ED8D /* PrototypeBase-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototypeBase-Bridging-Header.h"; sourceTree = "<group>"; };
 		112518A21C04E06100E9ED8D /* PrototypeBaseTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototypeBaseTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		112518A31C04E06100E9ED8D /* PrototypeBaseUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototypeBaseUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		113B5D691C1F6A7D00ED3D68 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		113B5D6C1C1F6D2900ED3D68 /* MapBuddy_Demo_view1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapBuddy_Demo_view1.png; sourceTree = "<group>"; };
+		113B5D6D1C1F6D2900ED3D68 /* MapBuddy_Demo_view2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapBuddy_Demo_view2.png; sourceTree = "<group>"; };
+		113B5D6E1C1F6D2900ED3D68 /* MapBuddy_Demo_view3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapBuddy_Demo_view3.png; sourceTree = "<group>"; };
+		113B5D6F1C1F6D2900ED3D68 /* MapBuddy_Demo_view4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapBuddy_Demo_view4.png; sourceTree = "<group>"; };
+		113B5D701C1F6D2900ED3D68 /* MapBuddy_Demo_view5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapBuddy_Demo_view5.png; sourceTree = "<group>"; };
+		113B5D711C1F6D2900ED3D68 /* MapBuddy_Demo_view6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapBuddy_Demo_view6.png; sourceTree = "<group>"; };
+		113B5D721C1F6D2900ED3D68 /* MapBuddy_Demo_view7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapBuddy_Demo_view7.png; sourceTree = "<group>"; };
+		113B5D731C1F6D2900ED3D68 /* MapBuddy_Demo_view8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapBuddy_Demo_view8.png; sourceTree = "<group>"; };
 		116C35291C050D4300DF2AB4 /* ASRBatchAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRBatchAPI.h; sourceTree = "<group>"; };
 		116C352A1C050D4300DF2AB4 /* ASRBatchAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRBatchAPI.m; sourceTree = "<group>"; };
 		1175A7161C03A50500862980 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -256,6 +274,7 @@
 			children = (
 				112518991C04DF6A00E9ED8D /* SpeechViewController.swift */,
 				1100D84A1BF848AB00189D46 /* MainViewController.swift */,
+				113B5D691C1F6A7D00ED3D68 /* SlideViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +340,13 @@
 			name = Audio;
 			sourceTree = "<group>";
 		};
+		113B5D6B1C1F6D1800ED3D68 /* MapDemoImages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MapDemoImages;
+			sourceTree = "<group>";
+		};
 		116C352C1C050D4B00DF2AB4 /* SpeechEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +377,15 @@
 		1175A7151C03A48F00862980 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				113B5D6C1C1F6D2900ED3D68 /* MapBuddy_Demo_view1.png */,
+				113B5D6D1C1F6D2900ED3D68 /* MapBuddy_Demo_view2.png */,
+				113B5D6E1C1F6D2900ED3D68 /* MapBuddy_Demo_view3.png */,
+				113B5D6F1C1F6D2900ED3D68 /* MapBuddy_Demo_view4.png */,
+				113B5D701C1F6D2900ED3D68 /* MapBuddy_Demo_view5.png */,
+				113B5D711C1F6D2900ED3D68 /* MapBuddy_Demo_view6.png */,
+				113B5D721C1F6D2900ED3D68 /* MapBuddy_Demo_view7.png */,
+				113B5D731C1F6D2900ED3D68 /* MapBuddy_Demo_view8.png */,
+				113B5D6B1C1F6D1800ED3D68 /* MapDemoImages */,
 				1125189D1C04DF9F00E9ED8D /* RedMicButton.png */,
 				1175A7221C03C2CC00862980 /* electronic_brain-gray-red-256.png */,
 				1175A7231C03C2CC00862980 /* electronic_brain-red-256.png */,
@@ -496,15 +531,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */,
+				113B5D741C1F6D2900ED3D68 /* MapBuddy_Demo_view1.png in Resources */,
+				113B5D7B1C1F6D2900ED3D68 /* MapBuddy_Demo_view8.png in Resources */,
+				113B5D771C1F6D2900ED3D68 /* MapBuddy_Demo_view4.png in Resources */,
+				113B5D7A1C1F6D2900ED3D68 /* MapBuddy_Demo_view7.png in Resources */,
 				1100D8531BF848AB00189D46 /* Assets.xcassets in Resources */,
 				1175A71F1C03AB3600862980 /* electronic_brain-gray-256.png in Resources */,
 				1125189E1C04DF9F00E9ED8D /* RedMicButton.png in Resources */,
+				113B5D791C1F6D2900ED3D68 /* MapBuddy_Demo_view6.png in Resources */,
+				113B5D781C1F6D2900ED3D68 /* MapBuddy_Demo_view5.png in Resources */,
 				1175A7241C03C2CC00862980 /* electronic_brain-gray-red-256.png in Resources */,
 				110BE5B41BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */,
 				1100D87A1BF849F000189D46 /* Podfile in Resources */,
 				110BE5B81BFBAEE100B9A61D /* pay.mp3 in Resources */,
 				1175A7251C03C2CC00862980 /* electronic_brain-red-256.png in Resources */,
+				113B5D751C1F6D2900ED3D68 /* MapBuddy_Demo_view2.png in Resources */,
 				1100D8871BF853FA00189D46 /* Default-568h@2x.png in Resources */,
+				113B5D761C1F6D2900ED3D68 /* MapBuddy_Demo_view3.png in Resources */,
 				110BE5A41BFA8F2F00B9A61D /* Sertig.otf in Resources */,
 				1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */,
 			);
@@ -609,6 +652,7 @@
 				110BDBF61C06456200EBA131 /* SoundFileHelper.m in Sources */,
 				110BDC021C06527500EBA131 /* NSUserDefaults+ASRSupport.m in Sources */,
 				110BE5A81BFA8FC700B9A61D /* AppUIAppearanceManager.swift in Sources */,
+				113B5D6A1C1F6A7D00ED3D68 /* SlideViewController.swift in Sources */,
 				116C352B1C050D4300DF2AB4 /* ASRBatchAPI.m in Sources */,
 				110BDBF91C06473200EBA131 /* ASRServerConfig.m in Sources */,
 				110BDC051C06528F00EBA131 /* DemoHelper.m in Sources */,

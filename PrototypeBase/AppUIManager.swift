@@ -95,6 +95,10 @@ class AppUIManager{
     
     //MARK: - view elements methods:  UIButton
     
+    func getClearButton() -> UIButton {
+        return self.getButtonWithTitle("", buttonColor: UIColor.clearColor(), textColor: UIColor.clearColor())
+    }
+
     func getButtonWithTitle(title: String, buttonColor: UIColor, textColor: UIColor) -> UIButton {
         let button = UIButton(type: .Custom)
         button.translatesAutoresizingMaskIntoConstraints =  false
