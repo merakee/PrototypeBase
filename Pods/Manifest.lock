@@ -1,10 +1,34 @@
 PODS:
+  - ApiAI (0.4.4):
+    - ApiAI/AudioFileConverter (= 0.4.4)
+    - ApiAI/Core (= 0.4.4)
+    - ApiAI/ResponseMapping (= 0.4.4)
+    - ApiAI/UIKit (= 0.4.4)
+    - ApiAI/VoiceFileRequest (= 0.4.4)
+    - ApiAI/VoiceRequest (= 0.4.4)
+  - ApiAI/AudioFileConverter (0.4.4):
+    - ApiAI/Core
+  - ApiAI/Core (0.4.4)
+  - ApiAI/ResponseMapping (0.4.4):
+    - ApiAI/Core (~> 1.1.0)
+  - ApiAI/UIKit (0.4.4):
+    - ApiAI/Core
+    - ApiAI/VoiceRequest
+  - ApiAI/VoiceFileRequest (0.4.4):
+    - ApiAI/Core
+  - ApiAI/VoiceRequest (0.4.4):
+    - ApiAI/Core
+  - MBProgressHUD (0.9.1)
   - PureLayout (3.0.1)
 
 DEPENDENCIES:
+  - ApiAI
+  - MBProgressHUD
   - PureLayout
 
 SPEC CHECKSUMS:
+  ApiAI: 45f647172640ad015bc13da82a09d4d028846a17
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
 
 COCOAPODS: 0.39.0

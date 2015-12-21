@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-PrototypeBase/ApiAI.framework"
+  install_framework "Pods-PrototypeBase/MBProgressHUD.framework"
   install_framework "Pods-PrototypeBase/PureLayout.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-PrototypeBase/ApiAI.framework"
+  install_framework "Pods-PrototypeBase/MBProgressHUD.framework"
   install_framework "Pods-PrototypeBase/PureLayout.framework"
 fi

@@ -10,3 +10,11 @@
 #import "SoundFileHelper.h"
 #import "DemoServerHelper.h"
 #import "ASRServerConfig.h"
+
+#import <ApiAI/ApiAI.h>
+#import <ApiAI/AIDefaultConfiguration.h>
+#import <ApiAI/AIVoiceRequestButton.h>
+
+//#import "APIAIVoiceRequestButton.h"
+
+#import <MBProgressHUD/MBProgressHUD.h>

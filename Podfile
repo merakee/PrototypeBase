@@ -6,8 +6,12 @@ use_frameworks!
 
 def pods_ui
     pod 'PureLayout'
+    pod 'MBProgressHUD'
 end
 
+def pods_ml
+    pod 'ApiAI'
+end
 
 def pods_networking
     pod 'AFNetworking', '1.1.0'
@@ -17,6 +21,7 @@ end
 
 target 'PrototypeBase' do
     pods_ui
+    pods_ml
 end
 
 target 'PrototypeBaseTests' do
