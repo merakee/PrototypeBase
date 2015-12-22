@@ -84,9 +84,11 @@ class ApiAiTextButtonViewController: UIViewController {
             print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
             
             if let dict = response as? NSDictionary{
+                print(dict)
                 if let dict1 = dict["result"] as? NSDictionary{
                     print(dict1["resolvedQuery"])
-                    self.speechManager.sayText(dict1["resolvedQuery"] as? String)
+                    //self.speechManager.sayText(dict1["resolvedQuery"] as? String)
+                   self.speechManager.sayText(dict1["speech"] as? String)
                 }
             }
             //self.processResponse(response)

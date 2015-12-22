@@ -36,4 +36,5 @@ typedef void(^AIVoiceRequestButtonFailure)(NSError *error);
 @property(nonatomic ,copy) AIVoiceRequestButtonFailure failureCallback;
 -(void)setFailureCallback:(AIVoiceRequestButtonFailure)failureCallback;
 
+- (IBAction)clicked:(id)sender;
 @end

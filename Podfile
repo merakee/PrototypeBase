@@ -11,6 +11,10 @@ end
 
 def pods_ml
     pod 'ApiAI'
+    pod 'ApiAI/Core'
+    pod 'ApiAI/VoiceRequest'
+    pod 'ApiAI/UIKit'
+    pod 'ApiAI/ResponseMapping'
 end
 
 def pods_networking

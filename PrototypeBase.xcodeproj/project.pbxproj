@@ -61,6 +61,12 @@
 		113B5D861C249A7400ED3D68 /* ApiAiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B5D851C249A7400ED3D68 /* ApiAiViewController.swift */; };
 		113B5DAE1C24E83300ED3D68 /* ApiAiTextButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B5DAD1C24E83300ED3D68 /* ApiAiTextButtonViewController.swift */; };
 		113B5DB21C28855200ED3D68 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B5DB11C28855200ED3D68 /* SpeechManager.swift */; };
+		113B5DBC1C2A086500ED3D68 /* AICubeIconImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DB61C2A086500ED3D68 /* AICubeIconImage.png */; };
+		113B5DBD1C2A086500ED3D68 /* AICubeIconImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DB71C2A086500ED3D68 /* AICubeIconImage@2x.png */; };
+		113B5DBE1C2A086500ED3D68 /* AICubeIconImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DB81C2A086500ED3D68 /* AICubeIconImage@3x.png */; };
+		113B5DBF1C2A086500ED3D68 /* AIMicrophoneControlImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DB91C2A086500ED3D68 /* AIMicrophoneControlImage.png */; };
+		113B5DC01C2A086500ED3D68 /* AIMicrophoneControlImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DBA1C2A086500ED3D68 /* AIMicrophoneControlImage@2x.png */; };
+		113B5DC11C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DBB1C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png */; };
 		116C352B1C050D4300DF2AB4 /* ASRBatchAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C352A1C050D4300DF2AB4 /* ASRBatchAPI.m */; };
 		1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7161C03A50500862980 /* Launch Screen.storyboard */; };
 		1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
@@ -140,6 +146,12 @@
 		113B5D851C249A7400ED3D68 /* ApiAiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiAiViewController.swift; sourceTree = "<group>"; };
 		113B5DAD1C24E83300ED3D68 /* ApiAiTextButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiAiTextButtonViewController.swift; sourceTree = "<group>"; };
 		113B5DB11C28855200ED3D68 /* SpeechManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
+		113B5DB61C2A086500ED3D68 /* AICubeIconImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AICubeIconImage.png; sourceTree = "<group>"; };
+		113B5DB71C2A086500ED3D68 /* AICubeIconImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AICubeIconImage@2x.png"; sourceTree = "<group>"; };
+		113B5DB81C2A086500ED3D68 /* AICubeIconImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AICubeIconImage@3x.png"; sourceTree = "<group>"; };
+		113B5DB91C2A086500ED3D68 /* AIMicrophoneControlImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AIMicrophoneControlImage.png; sourceTree = "<group>"; };
+		113B5DBA1C2A086500ED3D68 /* AIMicrophoneControlImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AIMicrophoneControlImage@2x.png"; sourceTree = "<group>"; };
+		113B5DBB1C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AIMicrophoneControlImage@3x.png"; sourceTree = "<group>"; };
 		116C35291C050D4300DF2AB4 /* ASRBatchAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRBatchAPI.h; sourceTree = "<group>"; };
 		116C352A1C050D4300DF2AB4 /* ASRBatchAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRBatchAPI.m; sourceTree = "<group>"; };
 		1175A7161C03A50500862980 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -350,6 +362,19 @@
 			name = Extarnal;
 			sourceTree = "<group>";
 		};
+		113B5DB51C2A084800ED3D68 /* ApiAiResources */ = {
+			isa = PBXGroup;
+			children = (
+				113B5DB61C2A086500ED3D68 /* AICubeIconImage.png */,
+				113B5DB71C2A086500ED3D68 /* AICubeIconImage@2x.png */,
+				113B5DB81C2A086500ED3D68 /* AICubeIconImage@3x.png */,
+				113B5DB91C2A086500ED3D68 /* AIMicrophoneControlImage.png */,
+				113B5DBA1C2A086500ED3D68 /* AIMicrophoneControlImage@2x.png */,
+				113B5DBB1C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png */,
+			);
+			name = ApiAiResources;
+			sourceTree = "<group>";
+		};
 		116C352C1C050D4B00DF2AB4 /* SpeechEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +405,7 @@
 		1175A7151C03A48F00862980 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				113B5DB51C2A084800ED3D68 /* ApiAiResources */,
 				1125189D1C04DF9F00E9ED8D /* RedMicButton.png */,
 				1175A7221C03C2CC00862980 /* electronic_brain-gray-red-256.png */,
 				1175A7231C03C2CC00862980 /* electronic_brain-red-256.png */,
@@ -524,18 +550,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113B5DBD1C2A086500ED3D68 /* AICubeIconImage@2x.png in Resources */,
+				113B5DBF1C2A086500ED3D68 /* AIMicrophoneControlImage.png in Resources */,
 				1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */,
+				113B5DC11C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png in Resources */,
 				1100D8531BF848AB00189D46 /* Assets.xcassets in Resources */,
 				1175A71F1C03AB3600862980 /* electronic_brain-gray-256.png in Resources */,
 				1125189E1C04DF9F00E9ED8D /* RedMicButton.png in Resources */,
 				1175A7241C03C2CC00862980 /* electronic_brain-gray-red-256.png in Resources */,
+				113B5DBE1C2A086500ED3D68 /* AICubeIconImage@3x.png in Resources */,
 				110BE5B41BFBA63300B9A61D /* railroad_crossing_bell.wav in Resources */,
 				1100D87A1BF849F000189D46 /* Podfile in Resources */,
 				110BE5B81BFBAEE100B9A61D /* pay.mp3 in Resources */,
 				1175A7251C03C2CC00862980 /* electronic_brain-red-256.png in Resources */,
+				113B5DC01C2A086500ED3D68 /* AIMicrophoneControlImage@2x.png in Resources */,
 				1100D8871BF853FA00189D46 /* Default-568h@2x.png in Resources */,
 				110BE5A41BFA8F2F00B9A61D /* Sertig.otf in Resources */,
 				1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */,
+				113B5DBC1C2A086500ED3D68 /* AICubeIconImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

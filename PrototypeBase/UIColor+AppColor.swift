@@ -61,7 +61,9 @@ extension UIColor {
     class var appBlueColor: UIColor {
         return UIColor(red: 0.6, green: 0.6, blue: 1.0, alpha: 1.0)
     }
-    
+    class var appLightBlueColor: UIColor {
+        return UIColor(red: 0.9, green: 0.9, blue: 1.0, alpha: 1.0)
+    }
     class var appGreenColor: UIColor {
         return UIColor(red: 0.6, green: 1.0, blue: 0.6, alpha: 1.0)
     }
