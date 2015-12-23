@@ -17,6 +17,10 @@ def pods_ml
     pod 'ApiAI/ResponseMapping'
 end
 
+def pods_map
+    pod 'ScoutMaps-iOS-SDK'
+end
+
 def pods_networking
     pod 'AFNetworking', '1.1.0'
     pod 'Reachability', '~> 3.1.0'
@@ -26,6 +30,7 @@ end
 target 'PrototypeBase' do
     pods_ui
     pods_ml
+    pods_map
 end
 
 target 'PrototypeBaseTests' do

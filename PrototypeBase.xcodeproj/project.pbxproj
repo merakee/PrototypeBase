@@ -67,6 +67,7 @@
 		113B5DBF1C2A086500ED3D68 /* AIMicrophoneControlImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DB91C2A086500ED3D68 /* AIMicrophoneControlImage.png */; };
 		113B5DC01C2A086500ED3D68 /* AIMicrophoneControlImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DBA1C2A086500ED3D68 /* AIMicrophoneControlImage@2x.png */; };
 		113B5DC11C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DBB1C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png */; };
+		113B5DC31C2A1A2300ED3D68 /* ScoutMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B5DC21C2A1A2300ED3D68 /* ScoutMapManager.swift */; };
 		116C352B1C050D4300DF2AB4 /* ASRBatchAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 116C352A1C050D4300DF2AB4 /* ASRBatchAPI.m */; };
 		1175A7171C03A50500862980 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7161C03A50500862980 /* Launch Screen.storyboard */; };
 		1175A71C1C03AB3600862980 /* electronic_brain-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A71A1C03AB3600862980 /* electronic_brain-256.png */; };
@@ -152,6 +153,7 @@
 		113B5DB91C2A086500ED3D68 /* AIMicrophoneControlImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AIMicrophoneControlImage.png; sourceTree = "<group>"; };
 		113B5DBA1C2A086500ED3D68 /* AIMicrophoneControlImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AIMicrophoneControlImage@2x.png"; sourceTree = "<group>"; };
 		113B5DBB1C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AIMicrophoneControlImage@3x.png"; sourceTree = "<group>"; };
+		113B5DC21C2A1A2300ED3D68 /* ScoutMapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoutMapManager.swift; sourceTree = "<group>"; };
 		116C35291C050D4300DF2AB4 /* ASRBatchAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRBatchAPI.h; sourceTree = "<group>"; };
 		116C352A1C050D4300DF2AB4 /* ASRBatchAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRBatchAPI.m; sourceTree = "<group>"; };
 		1175A7161C03A50500862980 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			children = (
 				113B5D801C24930C00ED3D68 /* ApiAiManager.swift */,
 				113B5DB11C28855200ED3D68 /* SpeechManager.swift */,
+				113B5DC21C2A1A2300ED3D68 /* ScoutMapManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				116C352B1C050D4300DF2AB4 /* ASRBatchAPI.m in Sources */,
 				110BDBF91C06473200EBA131 /* ASRServerConfig.m in Sources */,
 				110BDC051C06528F00EBA131 /* DemoHelper.m in Sources */,
+				113B5DC31C2A1A2300ED3D68 /* ScoutMapManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +766,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -799,6 +804,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

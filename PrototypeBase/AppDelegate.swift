@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
         //        let controller = masterNavigationController.topViewController as! MasterViewController
         // controller.managedObjectContext = self.managedObjectContext
+        
+        // other settings
+        ScoutMapManager.sharedManager
+        
         return true
     }
 

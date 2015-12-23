@@ -20,6 +20,7 @@ PODS:
     - ApiAI/Core
   - MBProgressHUD (0.9.2)
   - PureLayout (3.0.1)
+  - ScoutMaps-iOS-SDK (2.5.1)
 
 DEPENDENCIES:
   - ApiAI
@@ -29,10 +30,12 @@ DEPENDENCIES:
   - ApiAI/VoiceRequest
   - MBProgressHUD
   - PureLayout
+  - ScoutMaps-iOS-SDK
 
 SPEC CHECKSUMS:
   ApiAI: 45f647172640ad015bc13da82a09d4d028846a17
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  ScoutMaps-iOS-SDK: ba02a779c1d8abcc70124f8fb763d85f6a324a48
 
 COCOAPODS: 0.39.0

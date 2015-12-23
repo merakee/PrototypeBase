@@ -13,6 +13,7 @@ import ApiAI
 class ApiAiViewController: UIViewController {
     let apiAiManager = ApiAiManager.sharedManager
     var voiceRequestButton:AIVoiceRequestButton! = nil
+    var mapView: SKMapView!
     let speechManager = SpeechManager.sharedManager
     
     // MARK: - View Set up
@@ -27,6 +28,7 @@ class ApiAiViewController: UIViewController {
         
         // back ground color
         self.view.backgroundColor = UIColor.appLightBlueColor
+        self.setMapView()
         self.setVoiceRequestButton()
         self.layoutView()
     }
@@ -44,6 +46,19 @@ class ApiAiViewController: UIViewController {
         self.view.addSubview(voiceRequestButton)
     }
     
+    func setMapView(){
+        mapView = SKMapView()//(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)))
+        self.view.addSubview(mapView)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        //show the compass
+        mapView.settings.showCompass = true
+        //hide the map scale
+        mapView.mapScaleView.hidden = false
+        mapView.settings.rotationEnabled = false;
+        mapView.settings.followUserPosition = true;
+        mapView.settings.headingMode = SKHeadingMode.RotatingMap
+    }
     func layoutView(){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         //voiceRequestButton.autoSetDimension(.Height, toSize: 72.0)
@@ -52,7 +67,13 @@ class ApiAiViewController: UIViewController {
         //voiceRequestButton.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
         //voiceRequestButton.autoSetDimension(.Width, toSize: 72.0)
         //voiceRequestButton.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0,30.0,60.0,30.0), excludingEdge: .Top)
-        voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 60.0)
+        voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 20.0)
+        
+        // mapview
+        mapView.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: self.view)
+        mapView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: 0.0)
+        mapView.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 0.0)
+        //mapView.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Top, ofView: voiceRequestButton, withOffset: 10)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,9 +120,9 @@ class ApiAiViewController: UIViewController {
     }
     
     func listenForVoice(){
-        CommonUtils.delay(1){
-            self.voiceRequestButton.clicked(nil)
-        }
+//        CommonUtils.delay(1){
+//            self.voiceRequestButton.clicked(nil)
+//        }
     }
     
 }
