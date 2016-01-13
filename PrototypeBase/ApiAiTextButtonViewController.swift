@@ -107,7 +107,7 @@ class ApiAiTextButtonViewController: UIViewController {
     func processResponse(response:AnyObject){
         print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         var error: NSError?
-        let result = apiAiManager.parseJSONData(response, error:&error)
+        let result = CommandManager.sharedManager.parseJSONData(response, error:&error)
         
         print(result)
     }

@@ -15,6 +15,8 @@ class ApiAiManager: NSObject {
     // MARK: - singleton
     static let sharedManager = ApiAiManager()
     let apiai: ApiAI!
+    var voiceRequestButton:AIVoiceRequestButton! = nil
+    var voiceRequestButtonDual:AIVoiceRequestButton! = nil
     
     
     private override init() {
@@ -44,21 +46,38 @@ class ApiAiManager: NSObject {
         self.apiai.configuration = configuration
     }
     
-    func parseJSONData(response: AnyObject, inout error: NSError?) -> NSDictionary? {
-        
-        if let responseData = response.dataUsingEncoding(NSUTF8StringEncoding) {
-            do {
-                let results = try NSJSONSerialization.JSONObjectWithData(responseData, options: []) as! [String:AnyObject]
-                print(results)
-                return results
-            } catch let parseError as NSError {
-                error = parseError
-                print("JSON parser error: \(error!.localizedDescription)")
-            }
-        } else {
-            print("data convertion error: cannot convert to NSData")
+    // MARK: Session methods
+    func startSession(button: AIVoiceRequestButton, buttonDaul: AIVoiceRequestButton){
+        self.voiceRequestButton = button
+        self.voiceRequestButtonDual = buttonDaul
+        self.listenForCommand(self.voiceRequestButton)
+    }
+    
+    func selectButton(button: AIVoiceRequestButton)-> AIVoiceRequestButton{
+        if button === self.voiceRequestButtonDual{
+            return self.voiceRequestButton
         }
-        return nil
+        return self.voiceRequestButtonDual
+    }
+    
+    func endSession(){
+        
+    }
+    // MARK: AIVoiceRequestButton call back methods
+    func processResultOfVoiceButton(button: AIVoiceRequestButton, response: AnyObject) {
+        self.listenForCommand(self.selectButton(button))
+        CommandManager.sharedManager.processResponse(response)
+    }
+    
+    func processErrorOfVoiceButton(button: AIVoiceRequestButton, error: NSError){
+        self.listenForCommand(self.selectButton(button))
+        ErrorManager.sharedManager.processError(error)
+    }
+    
+    func listenForCommand(button: AIVoiceRequestButton){
+        //CommonUtils.delay(1){
+            button.clicked(nil)
+        //}
     }
     
 }

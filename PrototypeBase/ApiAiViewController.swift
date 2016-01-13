@@ -13,8 +13,8 @@ import ApiAI
 class ApiAiViewController: UIViewController {
     let apiAiManager = ApiAiManager.sharedManager
     var voiceRequestButton:AIVoiceRequestButton! = nil
+    var voiceRequestButtonDual:AIVoiceRequestButton! = nil
     var mapView: SKMapView!
-    let speechManager = SpeechManager.sharedManager
     
     // MARK: - View Set up
     override func loadView() {
@@ -38,12 +38,25 @@ class ApiAiViewController: UIViewController {
         //voiceRequestButton.color = UIColor.appGreenColor
         //voiceRequestButton.iconColor = UIColor.redColor()
         voiceRequestButton.successCallback = {(AnyObject response) -> Void in
-            self.processResult(response)
+            self.apiAiManager.processResultOfVoiceButton(self.voiceRequestButton, response: response)
         }
         voiceRequestButton.failureCallback = {(NSError error) -> Void in
-            self.processError(error)
+            self.apiAiManager.processErrorOfVoiceButton(self.voiceRequestButton, error: error)
         }
         self.view.addSubview(voiceRequestButton)
+        voiceRequestButton.hidden = true
+        
+        voiceRequestButtonDual = AIVoiceRequestButton()
+        //voiceRequestButtonDual.color = UIColor.appGreenColor
+        //voiceRequestButtonDual.iconColor = UIColor.redColor()
+        voiceRequestButtonDual.successCallback = {(AnyObject response) -> Void in
+            self.apiAiManager.processResultOfVoiceButton(self.voiceRequestButtonDual, response: response)
+        }
+        voiceRequestButtonDual.failureCallback = {(NSError error) -> Void in
+            self.apiAiManager.processErrorOfVoiceButton(self.voiceRequestButtonDual, error: error)
+        }
+        self.view.addSubview(voiceRequestButtonDual)
+       voiceRequestButtonDual.hidden = true
     }
     
     func setMapView(){
@@ -58,16 +71,27 @@ class ApiAiViewController: UIViewController {
         mapView.settings.rotationEnabled = false;
         mapView.settings.followUserPosition = true;
         mapView.settings.headingMode = SKHeadingMode.RotatingMap
+        // set initial region
+        MapViewManager.sharedManager.initializeMapRegion(mapView, withLocation:MapViewManager.FixedLocations.BaiduOffice, zoomLevel: 14)
     }
     func layoutView(){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         //voiceRequestButton.autoSetDimension(.Height, toSize: 72.0)
         //voiceRequestButton.autoMatchDimension(ALDimension.Height, toDimension: ALDimension.Width, ofView:voiceRequestButton)
-        voiceRequestButton.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
+        //voiceRequestButton.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
         //voiceRequestButton.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
         //voiceRequestButton.autoSetDimension(.Width, toSize: 72.0)
         //voiceRequestButton.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0,30.0,60.0,30.0), excludingEdge: .Top)
+        voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: 20)
         voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 20.0)
+        
+        
+        //voiceRequestButtonDual.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
+        //voiceRequestButtonDual.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
+        //voiceRequestButtonDual.autoSetDimension(.Width, toSize: 72.0)
+        //voiceRequestButtonDual.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0,30.0,60.0,30.0), excludingEdge: .Top)
+        voiceRequestButtonDual.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: 20)
+        voiceRequestButtonDual.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 20.0)
         
         // mapview
         mapView.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: self.view)
@@ -78,51 +102,12 @@ class ApiAiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.listenForVoice()
+        self.apiAiManager.startSession(self.voiceRequestButton, buttonDaul:self.voiceRequestButtonDual)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    
-    // MARK: - Button Actions
-    //    func buttonPressed(sender: UIButton!){
-    //        // print(CommonUtils.sharedInstance.getDocumentRootDirectory())
-    //        //print(CommonUtils.sharedInstance.getResourceRootDirectory())
-    //        // play sound
-    //        //AppAudioManager.sharedManager.playSoundFromFile("railroad_crossing_bell", ofType: "wav")
-    //        //let aplayer = AppAudioManager.sharedManager.playSoundFromFile("pay", ofType: "mp3")
-    //        let aplayer = AppAudioManager.sharedManager.playSoundFromFile("railroad_crossing_bell", ofType: "wav")
-    //        aplayer!.play()
-    //    }
-    
-    // MARK: AIVoiceRequestButton call back methods
-    func processResult(response: AnyObject) {
-        if let dict = response as? NSDictionary{
-            print(dict)
-            if let dict1 = dict["result"] as? NSDictionary{
-                print(dict1["resolvedQuery"])
-                //self.speechManager.sayText(dict1["resolvedQuery"] as? String)
-                self.speechManager.sayText(dict1["speech"] as? String)
-            }
-        }
-        
-        self.listenForVoice()
-    }
-    
-    func processError(error: NSError){
-        print(error)
-        self.listenForVoice()
-    }
-    
-    func listenForVoice(){
-//        CommonUtils.delay(1){
-//            self.voiceRequestButton.clicked(nil)
-//        }
     }
     
 }
