@@ -22,6 +22,6 @@ class ErrorManager: NSObject {
     }
     
     func processError(error: NSError){
-        print(error)
+       print(error)
     }
 }

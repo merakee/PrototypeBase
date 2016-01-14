@@ -10,11 +10,13 @@ import UIKit
 import PureLayout
 import ApiAI
 
-class ApiAiViewController: UIViewController {
+class ApiAiViewController: UIViewController, CommandManagerDelegate, ApiAiManagerDelegate, MapViewManagerDelegate {
     let apiAiManager = ApiAiManager.sharedManager
     var voiceRequestButton:AIVoiceRequestButton! = nil
     var voiceRequestButtonDual:AIVoiceRequestButton! = nil
     var mapView: SKMapView!
+    let commandManager = CommandManager.sharedManager
+    var debugMode = true
     
     // MARK: - View Set up
     override func loadView() {
@@ -26,6 +28,9 @@ class ApiAiViewController: UIViewController {
         // hide or show nav bar
         self.navigationController?.navigationBar.hidden = true
         
+        self.commandManager.delegate = self
+        self.apiAiManager.delegate = self
+        MapViewManager.sharedManager.delegate = self
         // back ground color
         self.view.backgroundColor = UIColor.appLightBlueColor
         self.setMapView()
@@ -35,7 +40,7 @@ class ApiAiViewController: UIViewController {
     
     func setVoiceRequestButton(){
         voiceRequestButton = AIVoiceRequestButton()
-        //voiceRequestButton.color = UIColor.appGreenColor
+        voiceRequestButton.color = UIColor.redColor()
         //voiceRequestButton.iconColor = UIColor.redColor()
         voiceRequestButton.successCallback = {(AnyObject response) -> Void in
             self.apiAiManager.processResultOfVoiceButton(self.voiceRequestButton, response: response)
@@ -47,7 +52,7 @@ class ApiAiViewController: UIViewController {
         voiceRequestButton.hidden = true
         
         voiceRequestButtonDual = AIVoiceRequestButton()
-        //voiceRequestButtonDual.color = UIColor.appGreenColor
+        voiceRequestButtonDual.color = UIColor.redColor()
         //voiceRequestButtonDual.iconColor = UIColor.redColor()
         voiceRequestButtonDual.successCallback = {(AnyObject response) -> Void in
             self.apiAiManager.processResultOfVoiceButton(self.voiceRequestButtonDual, response: response)
@@ -56,7 +61,7 @@ class ApiAiViewController: UIViewController {
             self.apiAiManager.processErrorOfVoiceButton(self.voiceRequestButtonDual, error: error)
         }
         self.view.addSubview(voiceRequestButtonDual)
-       voiceRequestButtonDual.hidden = true
+        voiceRequestButtonDual.hidden = true
     }
     
     func setMapView(){
@@ -65,28 +70,28 @@ class ApiAiViewController: UIViewController {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         //show the compass
-        mapView.settings.showCompass = true
+        //mapView.settings.showCompass = true
         //hide the map scale
         mapView.mapScaleView.hidden = false
         mapView.settings.rotationEnabled = false;
         mapView.settings.followUserPosition = true;
         mapView.settings.headingMode = SKHeadingMode.RotatingMap
         // set initial region
-        MapViewManager.sharedManager.initializeMapRegion(mapView, withLocation:MapViewManager.FixedLocations.BaiduOffice, zoomLevel: 14)
+        MapViewManager.sharedManager.initializeMapRegion(mapView, withLocation:MapViewManager.sharedManager.currentLocation(), zoomLevel: 13)
     }
     func layoutView(){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         //voiceRequestButton.autoSetDimension(.Height, toSize: 72.0)
         //voiceRequestButton.autoMatchDimension(ALDimension.Height, toDimension: ALDimension.Width, ofView:voiceRequestButton)
-        //voiceRequestButton.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
+        voiceRequestButton.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
         //voiceRequestButton.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
         //voiceRequestButton.autoSetDimension(.Width, toSize: 72.0)
         //voiceRequestButton.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0,30.0,60.0,30.0), excludingEdge: .Top)
-        voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: 20)
+        //voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: 20)
         voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 20.0)
         
         
-        //voiceRequestButtonDual.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
+        voiceRequestButtonDual.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
         //voiceRequestButtonDual.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
         //voiceRequestButtonDual.autoSetDimension(.Width, toSize: 72.0)
         //voiceRequestButtonDual.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0,30.0,60.0,30.0), excludingEdge: .Top)
@@ -103,6 +108,7 @@ class ApiAiViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.apiAiManager.startSession(self.voiceRequestButton, buttonDaul:self.voiceRequestButtonDual)
+        DialogueManager.sharedManager.promptUser(.InitialPrompt)
     }
     
     override func didReceiveMemoryWarning() {
@@ -110,4 +116,45 @@ class ApiAiViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: command manager delegate methods
+    func updateDebugMode(state: Bool) {
+        self.debugMode = state
+        if !self.debugMode {
+            self.voiceRequestButton.hidden = true
+            self.voiceRequestButtonDual.hidden = true
+        }
+    }
+    
+    // MARK: command manager delegate methods
+    func updateVoiceButton(button: AIVoiceRequestButton) {
+        //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+        if self.debugMode {
+            //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+            if button == self.voiceRequestButton {
+                self.voiceRequestButton.hidden = false
+                self.voiceRequestButtonDual.hidden = true
+            }
+            else{
+                self.voiceRequestButton.hidden = true
+                self.voiceRequestButtonDual.hidden = false
+            }
+        }
+    }
+    
+    
+    // MARK: SKMapViewDelegate methods
+    func mapView(mapView: SKMapView!, didChangeToRegion region:SKCoordinateRegion) {
+    }
+    
+    func mapView(mapView: SKMapView!, didTapAtCoordinate coordinate:CLLocationCoordinate2D) {
+    }
+    
+    func mapView(mapView: SKMapView!, didRotateWithAngle angle:Float) {
+    }
+    
+    // MARK: MapViewManagerDelegate
+    func updatePOIList(pois: [AnyObject]) {
+        MapViewManager.sharedManager.addAnnotations(self.mapView, pois: pois)
+    }
 }

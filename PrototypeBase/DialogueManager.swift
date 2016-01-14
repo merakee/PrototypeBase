@@ -44,4 +44,19 @@ class DialogueManager: NSObject {
         
     }
     
+    // MARK: Prompt dialogue
+    
+    func promptUser(type: PromptManager.PromptType, text: String = ""){
+        switch type {
+        case .InitialPrompt:
+            sayText(PromptManager.sharedManager.initialPrompt())
+        case .ErrorPromptFirst:
+            sayText(PromptManager.sharedManager.errorPromptFirst())
+        case .ErrorPromptSecond:
+            sayText(PromptManager.sharedManager.errorPromptSecond())
+        case .POISearchPrompt:
+            sayText(PromptManager.sharedManager.poiSearchPrompt(text))
+        }
+    }
+    
 }

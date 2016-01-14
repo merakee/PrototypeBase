@@ -10,14 +10,20 @@ import UIKit
 import ApiAI
 //import SwiftyJSON
 
+protocol ApiAiManagerDelegate {
+    func updateVoiceButton(button:AIVoiceRequestButton)
+}
+
 class ApiAiManager: NSObject {
+    
+    var delegate:ApiAiManagerDelegate?
     
     // MARK: - singleton
     static let sharedManager = ApiAiManager()
     let apiai: ApiAI!
     var voiceRequestButton:AIVoiceRequestButton! = nil
     var voiceRequestButtonDual:AIVoiceRequestButton! = nil
-    
+    var voiceRequestButtonCurrent:AIVoiceRequestButton! = nil
     
     private override init() {
         self.apiai = ApiAI.sharedApiAI()
@@ -53,11 +59,16 @@ class ApiAiManager: NSObject {
         self.listenForCommand(self.voiceRequestButton)
     }
     
-    func selectButton(button: AIVoiceRequestButton)-> AIVoiceRequestButton{
+    func updateButton(button: AIVoiceRequestButton)-> AIVoiceRequestButton{
         if button === self.voiceRequestButtonDual{
-            return self.voiceRequestButton
+            self.voiceRequestButtonCurrent =  self.voiceRequestButton
         }
-        return self.voiceRequestButtonDual
+        else {
+            self.voiceRequestButtonCurrent = self.voiceRequestButtonDual
+        }
+        //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+        self.delegate?.updateVoiceButton(self.voiceRequestButtonCurrent)
+        return self.voiceRequestButtonCurrent
     }
     
     func endSession(){
@@ -65,18 +76,20 @@ class ApiAiManager: NSObject {
     }
     // MARK: AIVoiceRequestButton call back methods
     func processResultOfVoiceButton(button: AIVoiceRequestButton, response: AnyObject) {
-        self.listenForCommand(self.selectButton(button))
+        print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+        self.listenForCommand(self.updateButton(button))
         CommandManager.sharedManager.processResponse(response)
     }
     
     func processErrorOfVoiceButton(button: AIVoiceRequestButton, error: NSError){
-        self.listenForCommand(self.selectButton(button))
+        //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+        self.listenForCommand(self.updateButton(button))
         ErrorManager.sharedManager.processError(error)
     }
     
     func listenForCommand(button: AIVoiceRequestButton){
         //CommonUtils.delay(1){
-            button.clicked(nil)
+        button.clicked(nil)
         //}
     }
     

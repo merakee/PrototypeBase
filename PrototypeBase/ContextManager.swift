@@ -24,8 +24,8 @@ class ContextInfo: NSObject{
 }
 
 class ContextManager: NSObject {
-    var contextArray = [ContextInfo]()
-    var currentContext  = 0
+    private var contextArray = [ContextInfo]()
+    private var currentContext  = 0
     
     // MARK: - singleton
     static let sharedManager = ContextManager()
@@ -39,8 +39,20 @@ class ContextManager: NSObject {
     }
     
     
-    // MARK: context managment methods
-    func addResponsToContext(response: AnyObject){
+    // MARK: context management methods
+    func addResponseToContext(response: AnyObject){
         self.contextArray.insert(ContextInfo(response: response), atIndex: 0)
+        self.currentContext = 0
     }
+    func removeResponseFromContext(){
+        if !self.contextArray.isEmpty {
+            self.contextArray.removeAtIndex(0)
+        }
+    }
+    
+    func resetContext(){
+        self.contextArray.removeAll()
+        self.currentContext = 0
+    }
+    
 }

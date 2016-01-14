@@ -524,7 +524,7 @@ class CommonUtils {
     //
     //    }
     //
-    //    // MARK: -  Randomizarion and vector Methods
+    // MARK: -  Randomizarion and vector Methods
     //    + (void)normalizeArray:(float *)array withSize:(int)size {
     //    float sum=0.0;
     //    for(int ind=0; ind<size; ind++) {
@@ -601,40 +601,23 @@ class CommonUtils {
     //
     //    return (NSArray *)marray;
     //    }
-    //    + (int)pickRandom:(int)maxInt {
-    //    int randNumber;
-    //    /*
-    //    // old method
-    //    // returns a random integers between 0 and maxInt-1
-    //
-    //    randNumber = random();
-    //    if(randNumber>=RAND_MAX) {
-    //    randNumber = RAND_MAX - 1;
-    //    }
-    //
-    //    // NSPLog(@"rand:%d, %f",randNumber,(float) randNumber/RAND_MAX);
-    //
-    //    randNumber =(int) floor(maxInt*(((float) randNumber)/RAND_MAX));
-    //    */
-    //
-    //    // new method
-    //    randNumber = arc4random() % maxInt;
-    //
-    //    return randNumber;
-    //    }
-    //
-    //    + (int)pickRandomFrom:(int)minLimit to:(int)maxLimit {
-    //    int randVal;
-    //
-    //    if(maxLimit>=minLimit) {
-    //    randVal = [CommonUtility pickRandom:((maxLimit-minLimit)+1)]+minLimit;
-    //    }
-    //    else {
-    //    randVal = [CommonUtility pickRandom:((minLimit-maxLimit)+1)]+maxLimit;
-    //    }
-    //
-    //    return randVal;
-    //    }
+    
+    func pickRandom(maxInt:Int) -> Int {
+        return Int(arc4random_uniform(UInt32(maxInt)))
+    }
+    
+    func pickRandomFrom(minLimit:Int,  to maxLimit: Int) -> Int {
+        var randVal: Int
+        
+        if  maxLimit >= minLimit {
+            randVal = self.pickRandom((maxLimit-minLimit)+1)+minLimit;
+        }
+        else {
+            randVal = self.pickRandom((minLimit-maxLimit)+1)+maxLimit;
+        }
+        
+        return randVal;
+    }
     //
     //    + (BOOL)findRandomIndices:(int *)array withSize:(int)arraySize forMaxInd:(int)maxInd {
     //    BOOL isSuccessful = NO;
