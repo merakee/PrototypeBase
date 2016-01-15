@@ -10,6 +10,7 @@ import UIKit
 
 protocol CommandManagerDelegate {
     func updateDebugMode(state:Bool)
+    func resetAnnotations()
 }
 
 class CommandManager: NSObject {
@@ -61,24 +62,29 @@ class CommandManager: NSObject {
     }
     
     func executeAction(action:String, result: NSDictionary, response:AnyObject){
-        ContextManager.sharedManager.addResponseToContext(response)
-        
         switch action{
-        //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+            //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         case "ActionGreetings":
             self.processGreetings(result, response: response)
+            ContextManager.sharedManager.addResponseToContext(response)
         case "ActionDebugCommand":
             self.processDebugCommands(result, response: response)
+            ContextManager.sharedManager.addResponseToContext(response)
         case "ExecuteCommand":
             self.processCommands(result, response: response)
+            ContextManager.sharedManager.addResponseToContext(response)
         case "ActionPOIDirection":
             self.processPOIDirection(result, response: response)
+            ContextManager.sharedManager.addResponseToContext(response)
         case "ActionPOISearch":
             self.processPOISearch(result, response: response)
+            ContextManager.sharedManager.addResponseToContext(response)
         case "maps.places":
             self.processPOISearchForMapPlaces(result, response: response)
+            ContextManager.sharedManager.addResponseToContext(response)
         default:
-            ContextManager.sharedManager.removeResponseFromContext()    
+            self.processNotUnderstoodSpeech()
+            ContextManager.sharedManager.addErrorToContext()
             print("default...")
         }
     }
@@ -117,35 +123,47 @@ class CommandManager: NSObject {
             break
         }
     }
-
+    
+    func processNotUnderstoodSpeech(){
+        if ContextManager.sharedManager.errorCount < 2 {
+            DialogueManager.sharedManager.promptUser(.ErrorPromptFirst)
+        }
+        else {
+            DialogueManager.sharedManager.promptUser(.ErrorPromptSecond)
+        }
+    }
     func processGreetings(result:NSDictionary, response:AnyObject){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         //let parameter = self.getParameter("command", fromResult: result)
         //print("Command with parameter: " + parameter)
-        self.sayResponse(result)
+        // self.sayResponse(result)
+        DialogueManager.sharedManager.promptUser(.POISearchPrompt)
     }
     
     func processCommands(result:NSDictionary, response:AnyObject){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         let parameter = self.getParameter("command", fromResult: result)
         print("Command with parameter: " + parameter)
+        self.sayResponse(result)
     }
     
     
     func processPOISearch(result:NSDictionary, response:AnyObject){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         let parameter = self.getParameter("poi", fromResult: result)
-        MapViewManager.sharedManager.findPOI(parameter, near: MapViewManager.sharedManager.currentLocation())
+        MKMapViewManager.sharedManager.findPOI(parameter, near: MapViewManager.sharedManager.currentLocation())
         print("POI search with parameter: " + parameter)
         self.sayResponse(result)
+        self.delegate?.resetAnnotations()
     }
-
+    
     func processPOISearchForMapPlaces(result:NSDictionary, response:AnyObject){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         let parameter = self.getParameter("venue_type", fromResult: result)
-        MapViewManager.sharedManager.findPOI(parameter, near: MapViewManager.sharedManager.currentLocation())
+        MKMapViewManager.sharedManager.findPOI(parameter, near: MapViewManager.sharedManager.currentLocation())
         print("POI search for Map Places with parameter: " + parameter)
         DialogueManager.sharedManager.promptUser(.POISearchPrompt,text: parameter)
+        self.delegate?.resetAnnotations()
     }
     
     func processPOIDirection(result:NSDictionary, response:AnyObject){
@@ -153,8 +171,6 @@ class CommandManager: NSObject {
         let parameter = self.getParameter("selection", fromResult: result)
         print("POI direction with parameter: " + parameter)
     }
-    
-    
 }
 
 

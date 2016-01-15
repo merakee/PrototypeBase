@@ -55,7 +55,9 @@ class DialogueManager: NSObject {
         case .ErrorPromptSecond:
             sayText(PromptManager.sharedManager.errorPromptSecond())
         case .POISearchPrompt:
-            sayText(PromptManager.sharedManager.poiSearchPrompt(text))
+            sayText(PromptManager.sharedManager.poiSearchPrompt())
+        case .POIResponsePrompt:
+            sayText(PromptManager.sharedManager.poiResponsePrompt(text))
         }
     }
     

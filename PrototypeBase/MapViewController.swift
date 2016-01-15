@@ -9,12 +9,13 @@
 import UIKit
 import PureLayout
 import ApiAI
+import MapKit
 
-class ApiAiViewController: UIViewController, CommandManagerDelegate, ApiAiManagerDelegate, MapViewManagerDelegate {
+class MapViewController: UIViewController, CommandManagerDelegate, ApiAiManagerDelegate, MKMapViewManagerDelegate {
     let apiAiManager = ApiAiManager.sharedManager
     var voiceRequestButton:AIVoiceRequestButton! = nil
     var voiceRequestButtonDual:AIVoiceRequestButton! = nil
-    var mapView: SKMapView!
+    var mapView: MKMapView!
     let commandManager = CommandManager.sharedManager
     var debugMode = true
     
@@ -30,7 +31,7 @@ class ApiAiViewController: UIViewController, CommandManagerDelegate, ApiAiManage
         
         self.commandManager.delegate = self
         self.apiAiManager.delegate = self
-        MapViewManager.sharedManager.delegate = self
+        MKMapViewManager.sharedManager.delegate = self
         // back ground color
         self.view.backgroundColor = UIColor.appLightBlueColor
         self.setMapView()
@@ -65,19 +66,11 @@ class ApiAiViewController: UIViewController, CommandManagerDelegate, ApiAiManage
     }
     
     func setMapView(){
-        mapView = SKMapView()//(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)))
+        mapView = MKMapView()
+        MKMapViewManager.sharedManager.setMapView(self.mapView)
         self.view.addSubview(mapView)
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        //show the compass
-        //mapView.settings.showCompass = true
-        //hide the map scale
-        mapView.mapScaleView.hidden = false
-        mapView.settings.rotationEnabled = false;
-        mapView.settings.followUserPosition = true;
-        mapView.settings.headingMode = SKHeadingMode.RotatingMap
-        // set initial region
-        MapViewManager.sharedManager.initializeMapRegion(mapView, withLocation:MapViewManager.sharedManager.currentLocation(), zoomLevel: 13)
     }
     func layoutView(){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
@@ -154,11 +147,11 @@ class ApiAiViewController: UIViewController, CommandManagerDelegate, ApiAiManage
     }
     
     // MARK: MapViewManagerDelegate
-    func updatePOIList(pois: [AnyObject]) {
-        MapViewManager.sharedManager.addAnnotations(self.mapView, pois: pois)
+    func updatePOIList(pois: [MKMapItem]) {
+        MKMapViewManager.sharedManager.addAnnotations(self.mapView, mapItems: pois)
     }
     
     func resetAnnotations() {
-    
+     MKMapViewManager.sharedManager.resetAnnotations(self.mapView)
     }
 }

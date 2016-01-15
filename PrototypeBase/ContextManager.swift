@@ -26,6 +26,7 @@ class ContextInfo: NSObject{
 class ContextManager: NSObject {
     private var contextArray = [ContextInfo]()
     private var currentContext  = 0
+    var errorCount = 0
     
     // MARK: - singleton
     static let sharedManager = ContextManager()
@@ -43,11 +44,16 @@ class ContextManager: NSObject {
     func addResponseToContext(response: AnyObject){
         self.contextArray.insert(ContextInfo(response: response), atIndex: 0)
         self.currentContext = 0
+        self.errorCount = 0
     }
     func removeResponseFromContext(){
         if !self.contextArray.isEmpty {
             self.contextArray.removeAtIndex(0)
         }
+    }
+    
+    func addErrorToContext(){
+        self.errorCount += 1 
     }
     
     func resetContext(){

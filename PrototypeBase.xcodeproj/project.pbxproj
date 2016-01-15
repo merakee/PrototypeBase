@@ -85,6 +85,8 @@
 		1175A7241C03C2CC00862980 /* electronic_brain-gray-red-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7221C03C2CC00862980 /* electronic_brain-gray-red-256.png */; };
 		1175A7251C03C2CC00862980 /* electronic_brain-red-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1175A7231C03C2CC00862980 /* electronic_brain-red-256.png */; };
 		11998F9F1C04EE86009840E8 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11998F9E1C04EE86009840E8 /* ServerManager.swift */; };
+		11D1C2E31C484F8000CDE3FD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1C2E21C484F8000CDE3FD /* MapViewController.swift */; };
+		11D1C2E51C484FC300CDE3FD /* MKMapViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1C2E41C484FC300CDE3FD /* MKMapViewManager.swift */; };
 		C73093E32E6D4D6FC996B6C9 /* Pods_PrototypeBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C644B850979E94B34EAAA5C6 /* Pods_PrototypeBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +178,8 @@
 		11998F9D1C04EE19009840E8 /* BSRSpeechRecognizerSubclass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSRSpeechRecognizerSubclass.h; sourceTree = "<group>"; };
 		11998F9E1C04EE86009840E8 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		11B23FA81BFA6FEA00A26C5E /* Sertig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sertig.otf; sourceTree = "<group>"; };
+		11D1C2E21C484F8000CDE3FD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		11D1C2E41C484FC300CDE3FD /* MKMapViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapViewManager.swift; sourceTree = "<group>"; };
 		84592943D0710470358FE4D4 /* Pods-PrototypeBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrototypeBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrototypeBase/Pods-PrototypeBase.release.xcconfig"; sourceTree = "<group>"; };
 		BDA0C0B5E1AA7E792C5ACA63 /* Pods-PrototypeBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrototypeBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrototypeBase/Pods-PrototypeBase.debug.xcconfig"; sourceTree = "<group>"; };
 		C644B850979E94B34EAAA5C6 /* Pods_PrototypeBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrototypeBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +295,7 @@
 		1100D87D1BF84A9000189D46 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11D1C2E21C484F8000CDE3FD /* MapViewController.swift */,
 				112518991C04DF6A00E9ED8D /* SpeechViewController.swift */,
 				1100D84A1BF848AB00189D46 /* MainViewController.swift */,
 				113B5D851C249A7400ED3D68 /* ApiAiViewController.swift */,
@@ -363,6 +368,7 @@
 		113B5D7C1C2492B100ED3D68 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				11D1C2E41C484FC300CDE3FD /* MKMapViewManager.swift */,
 				116123611C46CDE80093B617 /* ContextManager.swift */,
 				115561A31C4585C8006A8365 /* CommandManager.swift */,
 				115561A41C4585C8006A8365 /* DialogueManager.swift */,
@@ -675,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D1C2E31C484F8000CDE3FD /* MapViewController.swift in Sources */,
 				110BDC081C0652B500EBA131 /* InputSupport.m in Sources */,
 				1100D8511BF848AB00189D46 /* PrototypeBase.xcdatamodeld in Sources */,
 				115561A91C4585C8006A8365 /* ErrorManager.swift in Sources */,
@@ -703,6 +710,7 @@
 				115561A81C4585C8006A8365 /* DialogueManager.swift in Sources */,
 				116C352B1C050D4300DF2AB4 /* ASRBatchAPI.m in Sources */,
 				110BDBF91C06473200EBA131 /* ASRServerConfig.m in Sources */,
+				11D1C2E51C484FC300CDE3FD /* MKMapViewManager.swift in Sources */,
 				110BDC051C06528F00EBA131 /* DemoHelper.m in Sources */,
 				113B5DC31C2A1A2300ED3D68 /* ScoutMapManager.swift in Sources */,
 			);
