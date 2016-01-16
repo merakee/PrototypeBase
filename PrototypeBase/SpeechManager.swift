@@ -24,13 +24,31 @@ class SpeechManager: NSObject, AVSpeechSynthesizerDelegate{
         self.speechSynthesizer.delegate =  self
     }
     func sayText(text:String?){
+        self.stopSpeech()
+        self.addTextToSpeech(text)
+    }
+    
+    func addTextToSpeech(text:String?){
         if let textS = text {
             let speechUtterance = AVSpeechUtterance(string:textS)
             self.speechSynthesizer.speakUtterance(speechUtterance)
         }
     }
-
     
+    func stopSpeech(){
+        if self.speechSynthesizer.speaking{
+            self.speechSynthesizer.stopSpeakingAtBoundary(.Immediate)
+        }
+    }
+    
+    func pauseSpeech(){
+        self.speechSynthesizer.pauseSpeakingAtBoundary(.Word)
+    }
+    func continueSpeech(){
+        if self.speechSynthesizer.paused {
+            self.speechSynthesizer.continueSpeaking()
+        }
+    }
     // MARK: - AVSpeechSynthesizer Delegate methods
     func speechSynthesizer(synthesizer: AVSpeechSynthesizer,
         didCancelSpeechUtterance utterance: AVSpeechUtterance){

@@ -23,41 +23,23 @@ class DialogueManager: NSObject {
     func setupManager() {
     }
     
-    
-    func sayText(text: String?){
-        print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
-        if let texts = text {
-            print(texts)
-            self.speechManager.sayText(texts)
-        }
+    // MARK: Play content
+    func playContentOfType(type:ContentManager.ContentType){
+        self.speechManager.addTextToSpeech(ContentManager.sharedManager.getContentOfType(type))
     }
-    
-    func pauseSpeech(){
-        
-    }
-    
-    func continueSpeech(){
-        
-    }
-    
-    func endSpeech(){
-        
-    }
-    
     // MARK: Prompt dialogue
-    
     func promptUser(type: PromptManager.PromptType, text: String = ""){
         switch type {
         case .InitialPrompt:
-            sayText(PromptManager.sharedManager.initialPrompt())
+            self.speechManager.sayText(PromptManager.sharedManager.initialPrompt())
         case .ErrorPromptFirst:
-            sayText(PromptManager.sharedManager.errorPromptFirst())
+            self.speechManager.sayText(PromptManager.sharedManager.errorPromptFirst())
         case .ErrorPromptSecond:
-            sayText(PromptManager.sharedManager.errorPromptSecond())
+            self.speechManager.sayText(PromptManager.sharedManager.errorPromptSecond())
         case .POISearchPrompt:
-            sayText(PromptManager.sharedManager.poiSearchPrompt())
+            self.speechManager.sayText(PromptManager.sharedManager.poiSearchPrompt())
         case .POIResponsePrompt:
-            sayText(PromptManager.sharedManager.poiResponsePrompt(text))
+            self.speechManager.sayText(PromptManager.sharedManager.poiResponsePrompt(text))
         }
     }
     

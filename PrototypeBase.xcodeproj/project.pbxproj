@@ -69,6 +69,7 @@
 		113B5DC11C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113B5DBB1C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png */; };
 		113B5DC31C2A1A2300ED3D68 /* ScoutMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B5DC21C2A1A2300ED3D68 /* ScoutMapManager.swift */; };
 		113B5DC51C2B59D400ED3D68 /* MapViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B5DC41C2B59D400ED3D68 /* MapViewManager.swift */; };
+		1145E3381C4A35B300D30DA6 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145E3371C4A35B300D30DA6 /* ContentManager.swift */; };
 		115561A71C4585C8006A8365 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115561A31C4585C8006A8365 /* CommandManager.swift */; };
 		115561A81C4585C8006A8365 /* DialogueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115561A41C4585C8006A8365 /* DialogueManager.swift */; };
 		115561A91C4585C8006A8365 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115561A51C4585C8006A8365 /* ErrorManager.swift */; };
@@ -163,6 +164,7 @@
 		113B5DBB1C2A086500ED3D68 /* AIMicrophoneControlImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AIMicrophoneControlImage@3x.png"; sourceTree = "<group>"; };
 		113B5DC21C2A1A2300ED3D68 /* ScoutMapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoutMapManager.swift; sourceTree = "<group>"; };
 		113B5DC41C2B59D400ED3D68 /* MapViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewManager.swift; sourceTree = "<group>"; };
+		1145E3371C4A35B300D30DA6 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		115561A31C4585C8006A8365 /* CommandManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
 		115561A41C4585C8006A8365 /* DialogueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogueManager.swift; sourceTree = "<group>"; };
 		115561A51C4585C8006A8365 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 		113B5D7C1C2492B100ED3D68 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				1145E3371C4A35B300D30DA6 /* ContentManager.swift */,
 				11D1C2E41C484FC300CDE3FD /* MKMapViewManager.swift */,
 				116123611C46CDE80093B617 /* ContextManager.swift */,
 				115561A31C4585C8006A8365 /* CommandManager.swift */,
@@ -685,6 +688,7 @@
 				110BDC081C0652B500EBA131 /* InputSupport.m in Sources */,
 				1100D8511BF848AB00189D46 /* PrototypeBase.xcdatamodeld in Sources */,
 				115561A91C4585C8006A8365 /* ErrorManager.swift in Sources */,
+				1145E3381C4A35B300D30DA6 /* ContentManager.swift in Sources */,
 				1100D88E1BF854D600189D46 /* UIColor+AppColor.swift in Sources */,
 				115561A71C4585C8006A8365 /* CommandManager.swift in Sources */,
 				110BDC0B1C0652D200EBA131 /* ASRSoundSupport.m in Sources */,

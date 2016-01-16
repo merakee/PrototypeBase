@@ -36,7 +36,8 @@ class PromptManager: NSObject {
     
     let errorPromptArrayFirst = ["Sorry, I did not understand that. Could you please repeat",
         "Sorry, I did not get that. Would you please repeat",
-        "Oops, I did not understand that. Do you mind repeating?"]
+        "Oops, I did not understand that. Do you mind repeating?",
+        "My apology, I did not get that. Would you please repeat?"]
     
     let errorPromptArraySecond = ["I still did not get it. I can only help you to find a place. I am not smart enough to do other task",
         "I still did not understand. I can only help you find a place and not much more. Sorry"]

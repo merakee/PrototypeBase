@@ -73,6 +73,9 @@ class CommandManager: NSObject {
         case "ExecuteCommand":
             self.processCommands(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
+        case "ActionEntertainment":
+            self.processEntertainment(result, response: response)
+            ContextManager.sharedManager.addResponseToContext(response)
         case "ActionPOIDirection":
             self.processPOIDirection(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
@@ -93,7 +96,7 @@ class CommandManager: NSObject {
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         if let speech = result["speech"] as? String{
             print("Speech Response: " + speech)
-            DialogueManager.sharedManager.sayText(speech)
+            DialogueManager.sharedManager.speechManager.sayText(speech)
         }
     }
     
@@ -124,6 +127,31 @@ class CommandManager: NSObject {
         }
     }
     
+    func processEntertainment(result:NSDictionary, response:AnyObject){
+        //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+        let parameter = self.getParameter("content", fromResult: result)
+        switch parameter {
+        case "story":
+            self.sayResponse(result)
+            DialogueManager.sharedManager.playContentOfType(.Story)
+        case "poem":
+            self.sayResponse(result)
+            DialogueManager.sharedManager.playContentOfType(.Poem)
+        case "joke":
+            self.sayResponse(result)
+            DialogueManager.sharedManager.playContentOfType(.Joke)
+        case "song":
+            self.sayResponse(result)
+            DialogueManager.sharedManager.playContentOfType(.Song)
+        case "news":
+            self.sayResponse(result)
+            DialogueManager.sharedManager.playContentOfType(.News)
+        default:
+            break
+        }
+    }
+    
+    
     func processNotUnderstoodSpeech(){
         if ContextManager.sharedManager.errorCount < 2 {
             DialogueManager.sharedManager.promptUser(.ErrorPromptFirst)
@@ -144,7 +172,18 @@ class CommandManager: NSObject {
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         let parameter = self.getParameter("command", fromResult: result)
         print("Command with parameter: " + parameter)
-        self.sayResponse(result)
+        switch parameter{
+        case "Pausing":
+            DialogueManager.sharedManager.speechManager.pauseSpeech()
+        case "Continuing":
+            DialogueManager.sharedManager.speechManager.continueSpeech()
+        case "Stoping":
+            DialogueManager.sharedManager.speechManager.stopSpeech()
+        case "Starting Over":
+            DialogueManager.sharedManager.speechManager.sayText(ContentManager.sharedManager.currentContent)
+        default:
+            break
+        }
     }
     
     
@@ -159,11 +198,17 @@ class CommandManager: NSObject {
     
     func processPOISearchForMapPlaces(result:NSDictionary, response:AnyObject){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
-        let parameter = self.getParameter("venue_type", fromResult: result)
-        MKMapViewManager.sharedManager.findPOI(parameter, near: MapViewManager.sharedManager.currentLocation())
-        print("POI search for Map Places with parameter: " + parameter)
-        DialogueManager.sharedManager.promptUser(.POISearchPrompt,text: parameter)
-        self.delegate?.resetAnnotations()
+        var parameter = self.getParameter("venue_type", fromResult: result)
+        if parameter.isEmpty {
+            parameter = self.getParameter("venue_chain", fromResult: result)
+        }
+        
+        if !parameter.isEmpty{
+            MKMapViewManager.sharedManager.findPOI(parameter, near: MapViewManager.sharedManager.currentLocation())
+            print("POI search for Map Places with parameter: " + parameter)
+            DialogueManager.sharedManager.promptUser(.POIResponsePrompt,text: parameter)
+            self.delegate?.resetAnnotations()
+        }
     }
     
     func processPOIDirection(result:NSDictionary, response:AnyObject){
