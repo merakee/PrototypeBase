@@ -40,7 +40,7 @@ class MapViewController: UIViewController, CommandManagerDelegate, ApiAiManagerD
     }
     
     func setVoiceRequestButton(){
-        let buttonColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.75)
+        let buttonColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.7)
         voiceRequestButton = AIVoiceRequestButton()
         voiceRequestButton.color = buttonColor
         //voiceRequestButton.iconColor = UIColor.redColor()
@@ -82,15 +82,15 @@ class MapViewController: UIViewController, CommandManagerDelegate, ApiAiManagerD
         //voiceRequestButton.autoSetDimension(.Width, toSize: 72.0)
         //voiceRequestButton.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0,30.0,60.0,30.0), excludingEdge: .Top)
         //voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Left, withInset: 20)
-        voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 20.0)
+        voiceRequestButton.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 10.0)
         
         
         voiceRequestButtonDual.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
         //voiceRequestButtonDual.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
         //voiceRequestButtonDual.autoSetDimension(.Width, toSize: 72.0)
         //voiceRequestButtonDual.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0,30.0,60.0,30.0), excludingEdge: .Top)
-        voiceRequestButtonDual.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: 20)
-        voiceRequestButtonDual.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 20.0)
+        //voiceRequestButtonDual.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: 20)
+        voiceRequestButtonDual.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 10.0)
         
         // mapview
         mapView.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: self.view)

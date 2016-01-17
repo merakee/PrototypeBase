@@ -47,10 +47,10 @@ class PromptManager: NSObject {
         "I still did not understand. I can only help you find a place and not much more. Sorry"]
     
     let poiDestinationETASearchPromptArray = ["Looking up Estimated Travel time"]
-    let poiDestinationETAInfoPromptArray = ["Estimated Travel time is \(stringToken) minute"]
+    let poiDestinationETAInfoPromptArray = ["Estimated Travel time is \(stringToken) minutes"]
 
     let poiDestinationDistanceSearchPromptArray = ["Looking up destination distance"]
-    let poiDestinationDistanceInfoPromptArray = ["It is \(stringToken) mile away"]
+    let poiDestinationDistanceInfoPromptArray = ["It is \(stringToken) miles away"]
     
     
     // MARK: - singleton

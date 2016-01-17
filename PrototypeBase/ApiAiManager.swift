@@ -10,13 +10,13 @@ import UIKit
 import ApiAI
 //import SwiftyJSON
 
-protocol ApiAiManagerDelegate {
+protocol ApiAiManagerDelegate: class {
     func updateVoiceButton(button:AIVoiceRequestButton)
 }
 
 class ApiAiManager: NSObject {
     
-    var delegate:ApiAiManagerDelegate?
+    weak var delegate:ApiAiManagerDelegate?
     
     // MARK: - singleton
     static let sharedManager = ApiAiManager()

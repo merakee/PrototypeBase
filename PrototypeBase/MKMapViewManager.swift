@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-protocol MKMapViewManagerDelegate {
+protocol MKMapViewManagerDelegate: class {
     //func updatePOIList(pois:[MKMapItem])
     func showCurrentDestination()
 }
@@ -33,7 +33,7 @@ class MKMapViewManager: NSObject, MKMapViewDelegate {
         case Distance, ETA
     }
     
-    var delegate:MKMapViewManagerDelegate?
+    weak var delegate:MKMapViewManagerDelegate?
     var currentDestinations = [DestinationInfo]()
     var currentDestinationIndex = 0
     var currentPOI = ""
@@ -117,7 +117,7 @@ class MKMapViewManager: NSObject, MKMapViewDelegate {
         
         let search = MKLocalSearch(request: request)
         
-        search.startWithCompletionHandler({(response, error) in
+        search.startWithCompletionHandler({ [unowned self] (response, error) in
             if error != nil {
                 print("Error occured in search: \(error!.localizedDescription)")
             }
@@ -158,7 +158,7 @@ class MKMapViewManager: NSObject, MKMapViewDelegate {
         
         let direction = MKDirections(request: request)
         
-        direction.calculateETAWithCompletionHandler({(response, error) in
+        direction.calculateETAWithCompletionHandler({ [unowned self] (response, error) in
             if error != nil {
                 self.processETACalculationError(error!)
             }

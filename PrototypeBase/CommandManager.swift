@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol CommandManagerDelegate {
+protocol CommandManagerDelegate: class {
     func updateDebugMode(state:Bool)
     func resetAnnotations()
 }
 
 class CommandManager: NSObject {
-    var delegate:CommandManagerDelegate?
+    weak var delegate:CommandManagerDelegate?
     
     // MARK: - singleton
     static let sharedManager = CommandManager()

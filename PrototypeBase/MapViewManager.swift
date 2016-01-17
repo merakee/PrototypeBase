@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol MapViewManagerDelegate {
+protocol MapViewManagerDelegate: class {
     func updatePOIList(pois:[AnyObject])
 }
     
     
 class MapViewManager: NSObject, SKSearchServiceDelegate{
-    var delegate:MapViewManagerDelegate?
+    weak var delegate:MapViewManagerDelegate?
     
     // locations
     struct FixedLocations {
