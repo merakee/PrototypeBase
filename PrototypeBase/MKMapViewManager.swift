@@ -10,7 +10,8 @@ import UIKit
 import MapKit
 
 protocol MKMapViewManagerDelegate {
-    func updatePOIList(pois:[MKMapItem])
+    //func updatePOIList(pois:[MKMapItem])
+    func showCurrentDestination()
 }
 
 
@@ -78,20 +79,31 @@ class MKMapViewManager: NSObject, MKMapViewDelegate {
         mapView.removeAnnotationWithID(annotationID)
     }
     
-    func addAnnotations(mapView:MKMapView, mapItems: [MKMapItem]){
-        for (index,item) in mapItems.enumerate() {
-            if index < 3 {
-                self.addAnnotation(mapView, location: item.placemark.coordinate, type: ( index == 0 ? .Primary : .Secondary))
-            }
+    func addAnnotationForCurrentDestination(mapView:MKMapView){
+        if self.currentDestinations.count > self.currentDestinationIndex{
+            self.resetAnnotations(mapView)
+            print("Current Index: \(self.currentDestinationIndex)")
+            let mapItem  = self.currentDestinations[self.currentDestinationIndex].mapItem
+            self.addAnnotation(mapView, location: mapItem.placemark.coordinate, type: .Primary)
+            mapView.showAnnotations(mapView.annotations, animated: true)
         }
-        
-        mapView.showAnnotations(mapView.annotations, animated: true)
     }
+    
+    //    func addAnnotations(mapView:MKMapView, mapItems: [MKMapItem]){
+    //        for (index,item) in mapItems.enumerate() {
+    //            if index < 3 {
+    //                self.addAnnotation(mapView, location: item.placemark.coordinate, type: ( index == 0 ? .Primary : .Secondary))
+    //            }
+    //        }
+    //
+    //        mapView.showAnnotations(mapView.annotations, animated: true)
+    //    }
     
     func resetAnnotations(mapView: MKMapView){
         for annotation in mapView.annotations{
             mapView.removeAnnotation(annotation)
         }
+        
         self.addAnnotation(mapView, location: self.currentLocation(), type: .Current)
     }
     
@@ -111,9 +123,9 @@ class MKMapViewManager: NSObject, MKMapViewDelegate {
             }
             else if let results  = response {
                 print("Search results retrieved: \(results.mapItems) ")
-                self.currentPOI = poi 
+                self.currentPOI = poi
                 self.resetDestinationInfo(results.mapItems)
-                self.delegate?.updatePOIList(results.mapItems)
+                self.delegate?.showCurrentDestination()
                 CommandManager.sharedManager.processDestinationInfo(poi: poi)
             }
         })
@@ -202,7 +214,7 @@ class MKMapViewManager: NSObject, MKMapViewDelegate {
         print("ETA information: \(response) ")
         self.currentDestinations[self.currentDestinationIndex].destinationInfo = response
         if type == .Distance{
-        CommandManager.sharedManager.processDestinationDistance()
+            CommandManager.sharedManager.processDestinationDistance()
         }
         else{
             CommandManager.sharedManager.processDestinationETA()
@@ -223,22 +235,23 @@ class MKMapViewManager: NSObject, MKMapViewDelegate {
         if anView == nil {
             anView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             anView!.canShowCallout = true
-            switch annotation.subtitle{
-            case .Some(.Some("Current")):
-                anView!.pinTintColor = UIColor.blueColor()
-            case .Some(.Some("Primary")):
-                anView!.pinTintColor = MKPinAnnotationView.redPinColor()
-            case .Some(.Some("Secondary")):
-                anView!.pinTintColor = MKPinAnnotationView.purplePinColor()
-            case .Some(.Some("Selected")):
-                anView!.pinTintColor = MKPinAnnotationView.greenPinColor()
-            default:
-                anView!.pinTintColor = UIColor.blueColor()
-            }
         }
         else {
             //we are re-using a view, update its annotation reference...
             anView!.annotation = annotation
+        }
+        
+        switch annotation.subtitle{
+        case .Some(.Some("Current")):
+            anView!.pinTintColor = UIColor.blueColor()
+        case .Some(.Some("Primary")):
+            anView!.pinTintColor = MKPinAnnotationView.redPinColor()
+        case .Some(.Some("Secondary")):
+            anView!.pinTintColor = MKPinAnnotationView.purplePinColor()
+        case .Some(.Some("Selected")):
+            anView!.pinTintColor = MKPinAnnotationView.greenPinColor()
+        default:
+            anView!.pinTintColor = UIColor.blueColor()
         }
         
         return anView

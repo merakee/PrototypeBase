@@ -56,6 +56,9 @@ class CommandManager: NSObject {
                     print("Action: " + action)
                     self.executeAction(action, result: result,response: response)
                 }
+                else{
+                    self.processNotUnderstoodSpeech()
+                }
             }
         }
     }
@@ -73,9 +76,9 @@ class CommandManager: NSObject {
             self.processCommands(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
         case "ActionEntertainment":
-            self.processEntertainment(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
             ContextManager.sharedManager.currentContext = .ContextEntertainment
+            self.processEntertainment(result, response: response)
         case "ActionPOIDirection":
             self.processPOIDirection(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
@@ -86,17 +89,18 @@ class CommandManager: NSObject {
             self.processDestinationDistance(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
         case "ActionPOISearch":
-            self.processPOISearch(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
             ContextManager.sharedManager.currentContext = .ContextPOISearch
+            self.processPOISearch(result, response: response)
         case "maps.places":
             self.processPOISearchForMapPlaces(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
         default:
             self.processNotUnderstoodSpeech()
-            ContextManager.sharedManager.addErrorToContext()
             print("default...")
         }
+        
+        print("Current Context: \(ContextManager.sharedManager.currentContext.rawValue)")
     }
     
     func sayResponse(result:NSDictionary){
@@ -161,7 +165,8 @@ class CommandManager: NSObject {
     
     func processNotUnderstoodSpeech(){
         print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
-        if ContextManager.sharedManager.errorCount < 2 {
+        ContextManager.sharedManager.addErrorToContext()
+        if ContextManager.sharedManager.errorCount < 4 {
             DialogueManager.sharedManager.promptUser(.ErrorPromptFirst)
         }
         else {
@@ -204,7 +209,8 @@ class CommandManager: NSObject {
             }
         case "Starting Over":
             if ContextManager.sharedManager.currentContext == .ContextEntertainment {
-                DialogueManager.sharedManager.speechManager.sayText(ContentManager.sharedManager.currentContent)
+                self.sayResponse(result)
+                DialogueManager.sharedManager.speechManager.addTextToSpeech(ContentManager.sharedManager.currentContent)
             }
             else if ContextManager.sharedManager.currentContext == .ContextPOISearch {
                 self.resetPOIInfo()
@@ -255,7 +261,7 @@ class CommandManager: NSObject {
     }
     
     func invalidCommandRequest(){
-        
+        DialogueManager.sharedManager.speechManager.sayText("Sorry. Not a valid option for this context.")
     }
     
     // MARK: POI Related commands
@@ -284,6 +290,7 @@ class CommandManager: NSObject {
         if MKMapViewManager.sharedManager.currentDestinations.count > MKMapViewManager.sharedManager.currentDestinationIndex - 1 {
             MKMapViewManager.sharedManager.currentDestinationIndex += 1
             self.processDestinationInfo(poi: MKMapViewManager.sharedManager.currentPOI)
+            MKMapViewManager.sharedManager.delegate?.showCurrentDestination()
         }
         else{
             DialogueManager.sharedManager.speechManager.sayText("Sorry. This is the last \(MKMapViewManager.sharedManager.currentPOI) near by")
@@ -294,6 +301,7 @@ class CommandManager: NSObject {
         if MKMapViewManager.sharedManager.currentDestinationIndex > 0{
             MKMapViewManager.sharedManager.currentDestinationIndex -= 1
             self.processDestinationInfo(poi: MKMapViewManager.sharedManager.currentPOI)
+            MKMapViewManager.sharedManager.delegate?.showCurrentDestination()
         }
         else{
             DialogueManager.sharedManager.speechManager.sayText("Sorry. This the first \(MKMapViewManager.sharedManager.currentPOI)")
@@ -301,13 +309,15 @@ class CommandManager: NSObject {
     }
     
     func goToFirstPOIInfo(){
-         MKMapViewManager.sharedManager.currentDestinationIndex  = 0
+        MKMapViewManager.sharedManager.currentDestinationIndex  = 0
         self.processDestinationInfo(poi: MKMapViewManager.sharedManager.currentPOI)
+        MKMapViewManager.sharedManager.delegate?.showCurrentDestination()
     }
-
+    
     func goToLastPOIInfo(){
         MKMapViewManager.sharedManager.currentDestinationIndex  = MKMapViewManager.sharedManager.currentDestinations.count - 1
         self.processDestinationInfo(poi: MKMapViewManager.sharedManager.currentPOI)
+        MKMapViewManager.sharedManager.delegate?.showCurrentDestination()
     }
     
     func processDestinationInfo(result:NSDictionary? = nil , response:AnyObject? = nil, poi:String ){

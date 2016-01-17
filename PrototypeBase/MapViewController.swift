@@ -40,8 +40,9 @@ class MapViewController: UIViewController, CommandManagerDelegate, ApiAiManagerD
     }
     
     func setVoiceRequestButton(){
+        let buttonColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.75)
         voiceRequestButton = AIVoiceRequestButton()
-        voiceRequestButton.color = UIColor.redColor()
+        voiceRequestButton.color = buttonColor
         //voiceRequestButton.iconColor = UIColor.redColor()
         voiceRequestButton.successCallback = {(AnyObject response) -> Void in
             self.apiAiManager.processResultOfVoiceButton(self.voiceRequestButton, response: response)
@@ -53,7 +54,7 @@ class MapViewController: UIViewController, CommandManagerDelegate, ApiAiManagerD
         voiceRequestButton.hidden = true
         
         voiceRequestButtonDual = AIVoiceRequestButton()
-        voiceRequestButtonDual.color = UIColor.redColor()
+        voiceRequestButtonDual.color = buttonColor
         //voiceRequestButtonDual.iconColor = UIColor.redColor()
         voiceRequestButtonDual.successCallback = {(AnyObject response) -> Void in
             self.apiAiManager.processResultOfVoiceButton(self.voiceRequestButtonDual, response: response)
@@ -147,8 +148,12 @@ class MapViewController: UIViewController, CommandManagerDelegate, ApiAiManagerD
     }
     
     // MARK: MapViewManagerDelegate
-    func updatePOIList(pois: [MKMapItem]) {
-        MKMapViewManager.sharedManager.addAnnotations(self.mapView, mapItems: pois)
+//    func updatePOIList(pois: [MKMapItem]) {
+//        //MKMapViewManager.sharedManager.addAnnotations(self.mapView, mapItems: pois)
+//    }
+    
+    func showCurrentDestination(){
+        MKMapViewManager.sharedManager.addAnnotationForCurrentDestination(self.mapView)
     }
     
     func resetAnnotations() {
