@@ -40,6 +40,15 @@ class DialogueManager: NSObject {
             self.speechManager.sayText(PromptManager.sharedManager.poiSearchPrompt())
         case .POIResponsePrompt:
             self.speechManager.sayText(PromptManager.sharedManager.poiResponsePrompt(text))
+        case .POIDestinationDistanceInfo:
+            self.speechManager.sayText(PromptManager.sharedManager.poiDestinationDistanceInfoPrompt(text))
+        case .POIDestinationDistanceSearch:
+            self.speechManager.sayText(PromptManager.sharedManager.poiDestinationDistanceSearchPrompt(text))
+        case .POIDestinationETAInfo:
+            self.speechManager.sayText(PromptManager.sharedManager.poiDestinationETAInfoPrompt(text))
+        case .POIDestinationETASearch:
+            self.speechManager.sayText(PromptManager.sharedManager.poiDestinationETASearchPrompt(text))
+            
         }
     }
     

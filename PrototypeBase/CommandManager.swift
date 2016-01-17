@@ -28,7 +28,6 @@ class CommandManager: NSObject {
     }
     
     // MARK: Response parsing and processing methods
-    
     func parseJSONData(response: AnyObject, inout error: NSError?) -> NSDictionary? {
         
         if let responseData = response.dataUsingEncoding(NSUTF8StringEncoding) {
@@ -76,12 +75,20 @@ class CommandManager: NSObject {
         case "ActionEntertainment":
             self.processEntertainment(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
+            ContextManager.sharedManager.currentContext = .ContextEntertainment
         case "ActionPOIDirection":
             self.processPOIDirection(result, response: response)
+            ContextManager.sharedManager.addResponseToContext(response)
+        case "ActionDestinationETA":
+            self.processDestinationETA(result, response: response)
+            ContextManager.sharedManager.addResponseToContext(response)
+        case "ActionDestinationDistance":
+            self.processDestinationDistance(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
         case "ActionPOISearch":
             self.processPOISearch(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
+            ContextManager.sharedManager.currentContext = .ContextPOISearch
         case "maps.places":
             self.processPOISearchForMapPlaces(result, response: response)
             ContextManager.sharedManager.addResponseToContext(response)
@@ -153,6 +160,7 @@ class CommandManager: NSObject {
     
     
     func processNotUnderstoodSpeech(){
+        print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
         if ContextManager.sharedManager.errorCount < 2 {
             DialogueManager.sharedManager.promptUser(.ErrorPromptFirst)
         }
@@ -174,18 +182,83 @@ class CommandManager: NSObject {
         print("Command with parameter: " + parameter)
         switch parameter{
         case "Pausing":
-            DialogueManager.sharedManager.speechManager.pauseSpeech()
+            if ContextManager.sharedManager.currentContext == .ContextEntertainment {
+                DialogueManager.sharedManager.speechManager.pauseSpeech()
+            }
+            else{
+                self.invalidCommandRequest()
+            }
         case "Continuing":
-            DialogueManager.sharedManager.speechManager.continueSpeech()
+            if ContextManager.sharedManager.currentContext == .ContextEntertainment {
+                DialogueManager.sharedManager.speechManager.continueSpeech()
+            }
+            else{
+                self.invalidCommandRequest()
+            }
         case "Stoping":
-            DialogueManager.sharedManager.speechManager.stopSpeech()
+            if ContextManager.sharedManager.currentContext == .ContextEntertainment {
+                DialogueManager.sharedManager.speechManager.stopSpeech()
+            }
+            else{
+                self.invalidCommandRequest()
+            }
         case "Starting Over":
-            DialogueManager.sharedManager.speechManager.sayText(ContentManager.sharedManager.currentContent)
+            if ContextManager.sharedManager.currentContext == .ContextEntertainment {
+                DialogueManager.sharedManager.speechManager.sayText(ContentManager.sharedManager.currentContent)
+            }
+            else if ContextManager.sharedManager.currentContext == .ContextPOISearch {
+                self.resetPOIInfo()
+            }
+            else{
+                self.invalidCommandRequest()
+            }
+        case "Repeating":
+            if ContextManager.sharedManager.currentContext == .ContextPOISearch {
+                self.repeatPOIInfo()
+            }
+            else{
+                self.invalidCommandRequest()
+            }
+        case "Going to Next":
+            if ContextManager.sharedManager.currentContext == .ContextPOISearch {
+                self.nextPOIInfo()
+            }
+            else{
+                self.invalidCommandRequest()
+            }
+            
+        case "Going to Previous":
+            if ContextManager.sharedManager.currentContext == .ContextPOISearch {
+                self.previousPOIInfo()
+            }
+            else{
+                self.invalidCommandRequest()
+            }
+        case "Going to First":
+            if ContextManager.sharedManager.currentContext == .ContextPOISearch {
+                self.goToFirstPOIInfo()
+            }
+            else{
+                self.invalidCommandRequest()
+            }
+        case "Going to Last":
+            if ContextManager.sharedManager.currentContext == .ContextPOISearch {
+                self.goToLastPOIInfo()
+            }
+            else{
+                self.invalidCommandRequest()
+            }
+            
         default:
             break
         }
     }
     
+    func invalidCommandRequest(){
+        
+    }
+    
+    // MARK: POI Related commands
     
     func processPOISearch(result:NSDictionary, response:AnyObject){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
@@ -195,6 +268,109 @@ class CommandManager: NSObject {
         self.sayResponse(result)
         self.delegate?.resetAnnotations()
     }
+    
+    func resetPOIInfo(){
+        self.delegate?.resetAnnotations()
+        MKMapViewManager.sharedManager.resetDestinationInfo([])
+        DialogueManager.sharedManager.speechManager.sayText("Resetting location search")
+    }
+    
+    
+    func repeatPOIInfo(){
+        self.processDestinationInfo(poi: MKMapViewManager.sharedManager.currentPOI)
+    }
+    
+    func nextPOIInfo(){
+        if MKMapViewManager.sharedManager.currentDestinations.count > MKMapViewManager.sharedManager.currentDestinationIndex - 1 {
+            MKMapViewManager.sharedManager.currentDestinationIndex += 1
+            self.processDestinationInfo(poi: MKMapViewManager.sharedManager.currentPOI)
+        }
+        else{
+            DialogueManager.sharedManager.speechManager.sayText("Sorry. This is the last \(MKMapViewManager.sharedManager.currentPOI) near by")
+        }
+    }
+    
+    func previousPOIInfo(){
+        if MKMapViewManager.sharedManager.currentDestinationIndex > 0{
+            MKMapViewManager.sharedManager.currentDestinationIndex -= 1
+            self.processDestinationInfo(poi: MKMapViewManager.sharedManager.currentPOI)
+        }
+        else{
+            DialogueManager.sharedManager.speechManager.sayText("Sorry. This the first \(MKMapViewManager.sharedManager.currentPOI)")
+        }
+    }
+    
+    func goToFirstPOIInfo(){
+         MKMapViewManager.sharedManager.currentDestinationIndex  = 0
+        self.processDestinationInfo(poi: MKMapViewManager.sharedManager.currentPOI)
+    }
+
+    func goToLastPOIInfo(){
+        MKMapViewManager.sharedManager.currentDestinationIndex  = MKMapViewManager.sharedManager.currentDestinations.count - 1
+        self.processDestinationInfo(poi: MKMapViewManager.sharedManager.currentPOI)
+    }
+    
+    func processDestinationInfo(result:NSDictionary? = nil , response:AnyObject? = nil, poi:String ){
+        //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+        if MKMapViewManager.sharedManager.currentDestinations.isEmpty{
+            DialogueManager.sharedManager.speechManager.sayText("Sorry. I do not have any information on \(poi). Please tell me what you wish me to find.")
+            return
+        }
+        if MKMapViewManager.sharedManager.currentDestinations.count > MKMapViewManager.sharedManager.currentDestinationIndex{
+            let des = MKMapViewManager.sharedManager.currentDestinations[MKMapViewManager.sharedManager.currentDestinationIndex]
+            let address = des.mapItem.placemark.addressDictionary
+            var info = "There is a "
+            if let name  = address?["Name"] as? String{
+                info +=  name + " "
+            }
+            else{
+                "There is a \(poi) "
+            }
+            
+            if let street  = address?["Street"] as? String{
+                info += "on " + street + " "
+            }
+            if let city = address?["City"] as? String{
+                info += "in " + city + " "
+            }
+            DialogueManager.sharedManager.speechManager.sayText(info)
+        }
+        else{
+            DialogueManager.sharedManager.speechManager.sayText("Sorry. There is no more \(poi) near by")
+        }
+    }
+    
+    func processDestinationETA(result:NSDictionary? = nil , response:AnyObject? = nil ){
+        //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+        if MKMapViewManager.sharedManager.currentDestinations.isEmpty{
+            DialogueManager.sharedManager.speechManager.sayText("Sorry there is no destination to find ETA")
+            return
+        }
+        if let eta = MKMapViewManager.sharedManager.getCurrentDestinationETA(){
+            DialogueManager.sharedManager.promptUser(.POIDestinationETAInfo,text: eta)
+        }
+        else{
+            DialogueManager.sharedManager.promptUser(.POIDestinationETASearch)
+            MKMapViewManager.sharedManager.findDirectionETAInfoForCurrentDestination(.ETA)
+        }
+    }
+    
+    
+    func processDestinationDistance(result:NSDictionary? = nil, response:AnyObject? = nil ){
+        //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)
+        if MKMapViewManager.sharedManager.currentDestinations.isEmpty{
+            DialogueManager.sharedManager.speechManager.sayText("Sorry there is no destination to find distance")
+            return
+        }
+        if let dis = MKMapViewManager.sharedManager.getCurrentDestinationDistance(){
+            DialogueManager.sharedManager.promptUser(.POIDestinationDistanceInfo,text: dis)
+        }
+        else{
+            DialogueManager.sharedManager.promptUser(.POIDestinationDistanceSearch)
+            MKMapViewManager.sharedManager.findDirectionETAInfoForCurrentDestination(.Distance)
+        }
+    }
+    
     
     func processPOISearchForMapPlaces(result:NSDictionary, response:AnyObject){
         //print(NSURL(string:__FILE__)?.lastPathComponent!,":",__FUNCTION__,"Line:",__LINE__,"Col:",__COLUMN__)

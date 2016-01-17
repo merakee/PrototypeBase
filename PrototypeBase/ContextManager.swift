@@ -24,8 +24,14 @@ class ContextInfo: NSObject{
 }
 
 class ContextManager: NSObject {
+    
+    enum ContextType:String{
+        case ContextNone, ContextEntertainment, ContextPOISearch
+    }
+    
     private var contextArray = [ContextInfo]()
-    private var currentContext  = 0
+    private var currentContextIndex  = 0
+    var currentContext: ContextType = .ContextNone
     var errorCount = 0
     
     // MARK: - singleton
@@ -43,7 +49,7 @@ class ContextManager: NSObject {
     // MARK: context management methods
     func addResponseToContext(response: AnyObject){
         self.contextArray.insert(ContextInfo(response: response), atIndex: 0)
-        self.currentContext = 0
+        self.currentContextIndex = 0
         self.errorCount = 0
     }
     func removeResponseFromContext(){
@@ -58,7 +64,7 @@ class ContextManager: NSObject {
     
     func resetContext(){
         self.contextArray.removeAll()
-        self.currentContext = 0
+        self.currentContextIndex = 0
     }
     
 }

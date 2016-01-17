@@ -15,7 +15,11 @@ class PromptManager: NSObject {
         ErrorPromptFirst,
         ErrorPromptSecond,
         POISearchPrompt,
-        POIResponsePrompt
+        POIResponsePrompt,
+        POIDestinationETAInfo,
+        POIDestinationETASearch,
+        POIDestinationDistanceInfo,
+        POIDestinationDistanceSearch
     }
     
     static let stringToken = "DFSDsdfhfsd"
@@ -42,6 +46,11 @@ class PromptManager: NSObject {
     let errorPromptArraySecond = ["I still did not get it. I can only help you to find a place. I am not smart enough to do other task",
         "I still did not understand. I can only help you find a place and not much more. Sorry"]
     
+    let poiDestinationETASearchPromptArray = ["Looking up Estimated Travel time"]
+    let poiDestinationETAInfoPromptArray = ["Estimated Travel time is \(stringToken) minute"]
+
+    let poiDestinationDistanceSearchPromptArray = ["Looking up destination distance"]
+    let poiDestinationDistanceInfoPromptArray = ["It is \(stringToken) mile away"]
     
     
     // MARK: - singleton
@@ -67,6 +76,23 @@ class PromptManager: NSObject {
     func poiResponsePrompt(poi: String) -> String {
         return self.pickRandomFromArray(self.poiResponsePromptArray).stringByReplacingOccurrencesOfString(PromptManager.stringToken,withString: poi)
     }
+    
+    func poiDestinationDistanceInfoPrompt(text: String) -> String {
+        return self.pickRandomFromArray(self.poiDestinationDistanceInfoPromptArray).stringByReplacingOccurrencesOfString(PromptManager.stringToken,withString: text)
+    }
+    
+    func poiDestinationDistanceSearchPrompt(text: String) -> String {
+        return self.pickRandomFromArray(self.poiDestinationDistanceSearchPromptArray)
+    }
+    
+    func poiDestinationETAInfoPrompt(text: String) -> String {
+        return self.pickRandomFromArray(self.poiDestinationETAInfoPromptArray).stringByReplacingOccurrencesOfString(PromptManager.stringToken,withString: text)
+    }
+    
+    func poiDestinationETASearchPrompt(text: String) -> String {
+        return self.pickRandomFromArray(self.poiDestinationETASearchPromptArray)
+    }
+    
     
     func errorPromptFirst() -> String {
         return self.pickRandomFromArray(self.errorPromptArrayFirst)
