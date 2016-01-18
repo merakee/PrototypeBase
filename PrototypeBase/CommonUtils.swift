@@ -19,7 +19,7 @@ class CommonUtils {
     }
     
     // MARK: -  Class Methods
-    class func delay(delay:Double, closure:()->()) {
+    func executeAfterDelay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(
                 DISPATCH_TIME_NOW,

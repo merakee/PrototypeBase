@@ -222,6 +222,9 @@ class CommandManager: NSObject {
             if ContextManager.sharedManager.currentContext == .ContextPOISearch {
                 self.repeatPOIInfo()
             }
+            else if ContextManager.sharedManager.currentContext == .ContextEntertainment {
+                DialogueManager.sharedManager.speechManager.sayText(ContentManager.sharedManager.currentContent)
+            }
             else{
                 self.invalidCommandRequest()
             }
@@ -255,6 +258,8 @@ class CommandManager: NSObject {
                 self.invalidCommandRequest()
             }
             
+        case "Exit":
+            self.quitApp()
         default:
             break
         }
@@ -262,6 +267,16 @@ class CommandManager: NSObject {
     
     func invalidCommandRequest(){
         DialogueManager.sharedManager.speechManager.sayText("Sorry. Not a valid option for this context.")
+    }
+    
+    // MARK: System method
+    func quitApp(){
+        DialogueManager.sharedManager.speechManager.sayText("Thank you for using my service. Bye bye.")
+        
+        CommonUtils.sharedInstance.executeAfterDelay(2.5){
+            //UIApplication.sharedApplication().terminate(self)
+            exit(0)
+        }
     }
     
     // MARK: POI Related commands
